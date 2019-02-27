@@ -2,7 +2,7 @@
 
 **表达式 expression**， 对表达式求值得到一个结果，字面值和变量是最简单的表达式。把一个运算符与一个或多个运算对象组合起来可以得到复杂表达式
 
-**运算对象 operand                              
+**运算对象 operand                                
 **
 
 **运算符 opeartor**：一元unary、二元binary
@@ -84,9 +84,9 @@ vector<int> vi={1,2,3,4,5};
 
 指针类型ptr， ptr-&gt;mem等价于\(\*ptr\).mem
 
-箭头运算符，结果是左值
+**箭头运算符**，结果是左值
 
-点运算符，若成员是左值则结果为左值，反之为右值
+**点运算符**，若成员是左值则结果为左值，反之为右值
 
 # 条件运算符?:
 
@@ -167,7 +167,7 @@ uival + lval; //根据unsigned int 和 long所占空间的大小进行转换
 
 ## 显式转换
 
-**强制类型转换                
+**强制类型转换                  
 **
 
 cast-name&lt;type&gt;\(expression\);//cast-name为 static\_cast、dynamic\_cast、const\_cast和 reinterpret\_cast

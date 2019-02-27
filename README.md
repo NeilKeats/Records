@@ -2,7 +2,7 @@
 
 **表达式 expression**， 对表达式求值得到一个结果，字面值和变量是最简单的表达式。把一个运算符与一个或多个运算对象组合起来可以得到复杂表达式
 
-**运算对象 operand                                            
+**运算对象 operand                                              
 **
 
 **运算符 opeartor**：一元unary、二元binary
@@ -124,6 +124,8 @@ cout<<"hi"<<" there"<<endl;
 
 含有两个运算对象，按从左到右求值。先求左侧表达式的值，并抛弃求值结果，真正结果是右侧表达式的值（若右侧表达式运算对象是左值，则求值结果也算左值）
 
+
+
 # 类型转换
 
 ## 算术转换
@@ -165,7 +167,7 @@ uival + lval; //根据unsigned int 和 long所占空间的大小进行转换
 
 ## 显式转换
 
-**强制类型转换                              
+**强制类型转换                                
 **
 
 cast-name&lt;type&gt;\(expression\);//cast-name为 static\_cast、dynamic\_cast、const\_cast和 reinterpret\_cast

@@ -229,11 +229,79 @@ C++没有真正意义的多维数组，是数组的数组。
 
 **递归**：直接、间接调用自己
 
- 
-
 ---
 
 # 函数重载
+
+同一个 作用域内，几个函数名字相同但形参不同，称之为重载函数
+
+> \#main函数不能重载
+>
+> \#不允许两个函数除了返回类型外，其他要素相同
+
+## 重载与const形参
+
+如上所述，顶层const不影响传入函数的对象。一个有顶层const的形参无法与另一个无顶层const的形参区分。
+
+```
+    int func(int);
+    int func(const int); //重复声明
+    
+    int func_(int*);
+    int func_(int* const); //顶层const,重复声明
+```
+
+底层const可以实现重载
+
+```
+    int func(int &);
+    int func(const int &); //合法重载，常量引用
+    
+    int func_(int*);
+    int func_(const int*); 
+```
+
+底层const只能传给const。由于非常量可以转换为const，非常量引用、指向非常量的指针可以作用于以上四个函数，在调用时，编译器将非常量的参数优先调用非常量的重载函数。
+
+
+
+## const\_cast与重载
+
+```cpp
+    //常量引用版本
+    const string &shorter_string(const string &s1, const string &s2){
+        return s1.size()<=s2.size()?s1:s2;
+    }
+    //非常量引用版，需要一个普通引用返回
+    //可以使用const_cast
+    string &shorter_string(string &s1, string &s2){
+        auto &r = shorter_string(const_cast<const string&>(s1),
+                                 const_cast<const string&>(s2));
+        return const_cast<string&>(r);        
+    }
+```
+
+    
+
+## 调用重载的函数
+
+**函数匹配（function matching）**，又叫**重载确定（overload resolution）**
+
+把函数调用与一组重载函数中的某一个关联起来。将调用的实参与重载集合中的每一个函数的形参进行比较，再根据比较结果决定调用哪个：
+
+§ 找到一个与实参最佳匹配的（best mtach）的函数，生成调用的代码。
+
+§ 找不到任何一个匹配，编译器发出无匹配（no match）的错误。
+
+§ 有多于一个的函数可以匹配，但每一个都不是明显更好的选择。发生错误，二义性调用（ambiguous call）
+
+
+
+重载与作用域
+
+如果在内层作用域声明名字，将隐藏外层作用域中的同名实体。不同作用域中无法重载。
+
+\#C++中，名字查找发生在类型检查之前。
 
 
 

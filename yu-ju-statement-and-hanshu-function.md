@@ -243,7 +243,7 @@ C++没有真正意义的多维数组，是数组的数组。
 
 如上所述，顶层const不影响传入函数的对象。一个有顶层const的形参无法与另一个无顶层const的形参区分。
 
-```
+```cpp
     int func(int);
     int func(const int); //重复声明
 
@@ -253,7 +253,7 @@ C++没有真正意义的多维数组，是数组的数组。
 
 底层const可以实现重载
 
-```
+```cpp
     int func(int &);
     int func(const int &); //合法重载，常量引用
 
@@ -281,7 +281,7 @@ C++没有真正意义的多维数组，是数组的数组。
 
 ## 调用重载的函数
 
-**函数匹配（function matching）**，又叫**重载确定（overload resolution）  
+**函数匹配（function matching）**，又叫**重载确定（overload resolution）    
 **
 
 把函数调用与一组重载函数中的某一个关联起来。将调用的实参与重载集合中的每一个函数的形参进行比较，再根据比较结果决定调用哪个：

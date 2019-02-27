@@ -2,7 +2,7 @@
 
 **表达式 expression**， 对表达式求值得到一个结果，字面值和变量是最简单的表达式。把一个运算符与一个或多个运算对象组合起来可以得到复杂表达式
 
-**运算对象 operand      
+**运算对象 operand        
 **
 
 **运算符 opeartor**：一元unary、二元binary
@@ -28,8 +28,9 @@
 
 ```cpp
     Int i = f1()*f2(); //不确定发f1与f2的调用顺序；
-    std::cout<< i<< " "<< ++i <<std::endl; //未定义的。
     
+    std::cout<< i<< " "<< ++i <<std::endl; //未定义的。
+
     While(beg != s.end() && !isspace(*beg))
         *beg = toupper(*beg++)  //错误，该语句未定义
 ```
@@ -38,7 +39,9 @@
 
 例
 
-f\(\)+g\(\)\*h\(\)+j\(\)
+```cpp
+f()+g()*h()+j();
+```
 
 优先级：g\(\)返回值先与h\(\)返回值相乘
 

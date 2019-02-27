@@ -1,8 +1,8 @@
 {
-  "plugins": ["disqus","theme-comscore","-lunr", "-search", "search-plus","advanced-emoji","splitter","expandable-chapters-small","-highlight", "prism", "prism-themes","book-summary-scroll-position-saver","sharing","expandable-chapters","anchor-navigation-ex"],
+  "plugins": ["disqus","theme-comscore","-lunr", "-search", "search-plus","advanced-emoji","splitter","expandable-chapters-small","-highlight", "prism", "prism-themes","book-summary-scroll-position-saver","sharing","expandable-chapters","anchor-navigation-ex","katex"],
   "pluginsConfig": {
     "disqus": {
-      "shortName": "你的留言板名稱"
+      "shortName": "neilkeats"
     },
 	"prism": {
      "css": [

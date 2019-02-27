@@ -203,8 +203,7 @@ C++没有真正意义的多维数组，是数组的数组。
   ```
 
   * 若要返回一个数组指针，数组维度必须跟在函数名字之后。形参也跟在函数名前且先于数组维度。
-
-```cpp
+  * ```cpp
     Type (*function(parameter list)) [dimension];
     int (*func(int i))[10];
 
@@ -212,9 +211,8 @@ C++没有真正意义的多维数组，是数组的数组。
     typedef int arrT[10];
     using arrT = int[10];
     arrT* func(int i);
-```
-
-* 使用尾置返回类型（C++11）【也可使用decltype】
+    ```
+  * 使用尾置返回类型（C++11）【也可使用decltype】
 
 ```
     auto func(int i) -> int(*)[10]

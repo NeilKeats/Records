@@ -2,7 +2,7 @@
 
 **表达式 expression**， 对表达式求值得到一个结果，字面值和变量是最简单的表达式。把一个运算符与一个或多个运算对象组合起来可以得到复杂表达式
 
-**运算对象 operand              
+**运算对象 operand                
 **
 
 **运算符 opeartor**：一元unary、二元binary
@@ -48,15 +48,11 @@ f()+g()*h()+j();
 
 求值顺序：这些函数调用顺序无明确规定
 
-
-
 # 算数运算符：
 
 除非特殊说明，能用于任意算数类型；运算对象、求值结果都是右值。
 
 取模、取余运算：C++规定商向0取（切除小数部分）。要求： \(m/n\)\*n + m%n == m，即m%n若不为0则与m同号
-
- 
 
 # 逻辑和关系运算符
 
@@ -66,8 +62,6 @@ f()+g()*h()+j();
 
 进行比较运算时除非比较对象是bool，否则不使用bool字面值true和false
 
-
-
 # 赋值预算符
 
 左侧运算对象必须是课修改的左值，结果也是左侧运行对象的左值。
@@ -76,15 +70,11 @@ C++11允许花括号初始化 \(e.g. vector&lt;int&gt; vi={1,2,3,4,5};\)
 
 满足右结合律
 
- 
-
 # 递增、递减运算符
 
 前置版本：以左值形式返回对象本身
 
 后置版本：以右值形式返回对象原始值副本（非必要时不用，由于副本存在可能影响性能）
-
- 
 
 # 成员访问运算符
 
@@ -94,35 +84,27 @@ C++11允许花括号初始化 \(e.g. vector&lt;int&gt; vi={1,2,3,4,5};\)
 
 点运算符，若成员是左值则结果为左值，反之为右值
 
- 
-
 # 条件运算符?:
 
 可嵌套，右结合律，从右到左组合。
 
 优先级低，长表达式中嵌套了条件运算符子表达式，通常需要加括号
 
- 
-
 # 位运算符
 
-~	位求反
+~    位求反
 
-&lt;&lt;	左移
+&lt;&lt;    左移
 
-&gt;&gt;	右移
+&gt;&gt;    右移
 
-&	位与
+&    位与
 
-^	位异或
+^    位异或
 
-\|	位或
-
- 
+\|    位或
 
 左移/右移，右侧运算对象不能为负值且不可超过结果位数，移出界外的值舍弃
-
- 
 
 # 移位运算符
 
@@ -136,13 +118,9 @@ cout&lt;&lt;"hi"&lt;&lt;" there"&lt;&lt;endl
 
 并不实际计算运算对象的值，因此对无效指针p运算的size\(\*p\)是安全的
 
- 
-
 # 逗号运算符
 
 含有两个运算对象，按从左到右求值。先求左侧表达式的值，并抛弃求值结果，真正结果是右侧表达式的值（若右侧表达式运算对象是左值，则求值结果也算左值）
-
- 
 
 # 类型转换
 
@@ -154,41 +132,39 @@ cout&lt;&lt;"hi"&lt;&lt;" there"&lt;&lt;endl
 
 例：
 
-short sval; 
+short sval;
 
-char cval; 
+char cval;
 
-int ival; 
+int ival;
 
-long lval; 
+long lval;
 
-unsigned short usval; 
+unsigned short usval;
 
-unsigned int uival; 
+unsigned int uival;
 
-sval + cval; //sval和cval提升为int 
+sval + cval; //sval和cval提升为int
 
-usval + ival; //根据unsigned short 和 int所占空间大小进行提升 
+usval + ival; //根据unsigned short 和 int所占空间大小进行提升
 
 uival + lval; //根据unsigned int 和 long所占空间的大小进行转换
-
- 
 
 ## 其他类型隐式转换
 
 指针转换为数组。当数组用作decltype、sizeof、&取址符、typeid时，不发生以下转换。
 
-        int ia\[10\];
-
-        int \*ip = ia;
+```cpp
+    int ia[10];
+    int *ip = ia;
+```
 
 整数0、字面常量值nullptr能转换为任意指针类型；指向任意非常量的指针能转换为void\*；指向任意对象的指针能转换成 const void\*。
 
- 
-
 ## 显式转换
 
-**强制类型转换**
+**强制类型转换  
+**
 
 cast-name&lt;type&gt;\(expression\);//cast-name为 static\_cast、dynamic\_cast、const\_cast和 reinterpret\_cast
 
@@ -198,15 +174,11 @@ Static\_cast：任何具有明确意义的类型转换，只要不包含底层co
 
 Const\_cast：只能改变运算对象的底层const
 
-        const char \*pc;
+```
+    const char \*pc;
 
-        char \*p = const\_cast&lt;char\*&gt;\(pc\); //正确，但通过p写值是未定义行为
-
-
-
-
-
-
+    char \*p = const\_cast&lt;char\*&gt;\(pc\); //正确，但通过p写值是未定义行为
+```
 
 
 

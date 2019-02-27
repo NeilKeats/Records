@@ -121,3 +121,7 @@
 
 **定义**：阶为M的B-树
 
+
+
+![](/assets/B-Tree_3order.png)
+

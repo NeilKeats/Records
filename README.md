@@ -2,7 +2,7 @@
 
 **表达式 expression**， 对表达式求值得到一个结果，字面值和变量是最简单的表达式。把一个运算符与一个或多个运算对象组合起来可以得到复杂表达式
 
-**运算对象 operand                          
+**运算对象 operand                            
 **
 
 **运算符 opeartor**：一元unary、二元binary
@@ -64,7 +64,7 @@ f()+g()*h()+j();
 
 # 赋值预算符
 
-左侧运算对象必须是可修改的左值，结果也是左侧运行对象的左值。
+左侧运算对象必须是可修改的**左值**，结果也是左侧运行对象的左值。
 
 C++11允许花括号初始化
 
@@ -167,7 +167,7 @@ uival + lval; //根据unsigned int 和 long所占空间的大小进行转换
 
 ## 显式转换
 
-**强制类型转换            
+**强制类型转换              
 **
 
 cast-name&lt;type&gt;\(expression\);//cast-name为 static\_cast、dynamic\_cast、const\_cast和 reinterpret\_cast

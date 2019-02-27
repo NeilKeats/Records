@@ -113,9 +113,7 @@ void fcn(int i){} //错误，重复定义func(int)
 
 ```cpp
     void print(const int*);
-
     void print(const int[]);
-
     void print(const int[10]); //表示期望数组的元素数目，但实不一定如此
 ```
 

@@ -24,29 +24,25 @@
 
 递归的函数上下文栈，或者循环+栈。递归简单清晰，应练习非递归的循环遍历方法
 
-* **先序遍历\(pre-order\)**：node, child left, child right
+* **先序遍历\(pre-order\)**：遍历顺序：节点->左儿子（子树）->右儿子（子树）
 
   * [https://leetcode.com/problems/binary-tree-preorder-traversal/](https://leetcode.com/problems/binary-tree-preorder-traversal/)
-
-* **中序遍历**\(**in-order**\)：child left, node, child right
-
+* **中序遍历**\(**in-order**\)：左儿子（子树）->节点->右儿子（子树）
+  * 有意思的是，将N个点插入到**二叉查找树**，再执行中序遍历输出N个点的排序结果。（从中序遍历和二叉查找树的定义可理解，复杂度为$O(NlogN)$）
   * [https://leetcode.com/problems/binary-tree-inorder-traversal/](https://leetcode.com/problems/binary-tree-inorder-traversal/)
-
-* **后序遍历**\(**post-order**\)：child left, child right, node
+* **后序遍历**\(**post-order**\)：左儿子（子树）->右儿子（子树）->节点
 
   * [https://leetcode.com/problems/binary-tree-postorder-traversal/](https://leetcode.com/problems/binary-tree-postorder-traversal/)
-
 * **（先序）序列化**：
 
   * 加入空字符\#、结束字符！
-
 * **反序列化**：
 
   * 由输入字符串-&gt;vector
 
   * "12!3!\#!\#!\#!" -&gt; \["12","3","\#","\#","\#"\]
 
-# 二叉查找树
+# 二叉查找树：Binary search tree
 
 **定义**：每个节点都有其关键字值，对于树中每个节点X，其左子树中所有节点关键字值都小于X的，右子树所有节点的关键字值都大于X的。
 
@@ -119,7 +115,18 @@
 
 # B-Tree
 
-**定义**：阶为M的B-树
+**定义**：B-树是平衡M-路树；对于阶为M的B-树，有如下
+
+-   树的根，或为叶子节点，或有2到M个儿子
+-   除了根以外，所有非叶子节点（内部节点）的儿子数在⌈M/2⌉和M之间。
+-   所有树叶在相同深度上，所有的数据都存储在树叶上。（**数据本身**，或**指向数据的指针**）
+
+在每一个内部节点上，有如下：
+
+-   **指针**：指向该节点的各个儿子（子树），$P_1$,$P_2$,$P_3$,...,$P_M$
+-   **内部信息**：分别代表子树$P_2$,$P_3$,...,$P_{M}$中发现的**最小关键字**的值，$k_1$,$k_2$,$k_3$,...,$k_{M-1}$。（第一个子树由于在最左侧，没有比它更小的子树，因此不需要存储它的最小关键字值）
+
+**例子**：3阶B-树（又称为2-3树）
 
 
 

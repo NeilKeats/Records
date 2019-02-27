@@ -2,7 +2,7 @@
 
 **表达式 expression**， 对表达式求值得到一个结果，字面值和变量是最简单的表达式。把一个运算符与一个或多个运算对象组合起来可以得到复杂表达式
 
-**运算对象 operand                            
+**运算对象 operand                              
 **
 
 **运算符 opeartor**：一元unary、二元binary
@@ -76,9 +76,9 @@ vector<int> vi={1,2,3,4,5};
 
 # 递增、递减运算符
 
-前置版本：以左值形式返回对象本身
+前置版本：以**左值**形式返回对象本身
 
-后置版本：以右值形式返回对象原始值副本（非必要时不用，由于副本存在可能影响性能）
+**后置版本**：以**右值**形式返回对象原始值副本（非必要时不用，由于副本存在可能影响性能）
 
 # 成员访问运算符
 
@@ -167,7 +167,7 @@ uival + lval; //根据unsigned int 和 long所占空间的大小进行转换
 
 ## 显式转换
 
-**强制类型转换              
+**强制类型转换                
 **
 
 cast-name&lt;type&gt;\(expression\);//cast-name为 static\_cast、dynamic\_cast、const\_cast和 reinterpret\_cast

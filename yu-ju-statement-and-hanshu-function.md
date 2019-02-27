@@ -131,19 +131,19 @@ void fcn(int i){} //错误，重复定义func(int)
 
 ### 数组形参和const
 
-变量（形参）可定义为数组的引用。
+变量（形参）可定义为数组的引用
 
-* ```cpp
-  //正确：形参是数组的引用，维度是类型的一部分
-  void print(int (&arr)[10]){
-  for (auto elem : arr)
-  cout<< elem << endl;
-  }
+```cpp
+//正确：形参是数组的引用，维度是类型的一部分
+void print(int (&arr)[10]){
+for (auto elem : arr)
+cout<< elem << endl;
+}
 
-  //&arr两端括号不可省略
-  f(int &arr[10]); //错误，arr声明为引用的数组
-  f(int (&arr)[10]);
-  ```
+//&arr两端括号不可省略
+f(int &arr[10]); //错误，arr声明为引用的数组
+f(int (&arr)[10]);
+```
 
 数组大小是构成数组类型的一部分，不超过维度都可在函数体内使用。
 

@@ -2,7 +2,7 @@
 
 **表达式 expression**， 对表达式求值得到一个结果，字面值和变量是最简单的表达式。把一个运算符与一个或多个运算对象组合起来可以得到复杂表达式
 
-**运算对象 operand                                                          
+**运算对象 operand                                                            
 **
 
 **运算符 opeartor**：一元unary、二元binary
@@ -162,26 +162,26 @@ uival + lval; //根据unsigned int 和 long所占空间的大小进行转换
     int *ip = ia;
 ```
 
-整数0、字面常量值nullptr能转换为任意指针类型；指向任意非常量的指针能转换为`void*`；指向任意对象的指针能转换成` const void*`。
+整数0、字面常量值nullptr能转换为任意指针类型；指向任意非常量的指针能转换为`void*`；指向任意对象的指针能转换成`const void*`。
 
 ## 显式转换
 
 **强制类型转换**
 
 ```cpp
-cast-name<type>(expression);//cast-name为 static_cast、dynamic_cast、const_cast和 reinterpret_cast
+cast-name<type>(expression);
+//cast-name为 static_cast、dynamic_cast、const_cast和 reinterpret_cast
 ```
 
-Dynamic\_cast：支持运行时类型识别
+`Dynamic_cast`：支持运行时类型识别
 
-Static\_cast：任何具有明确意义的类型转换，只要不包含底层const都可用。可用于较大算数类型转换为较小类型、void\*转换为其他类型指针
+`Static_cast`：任何具有明确意义的类型转换，只要不包含底层`const`都可用。可用于较大算数类型转换为较小类型、`void*`转换为其他类型指针
 
-Const\_cast：只能改变运算对象的底层const
+`Const_cast`：只能改变运算对象的底层`const`
 
-```
-    const char \*pc;
-
-    char \*p = const\_cast&lt;char\*&gt;\(pc\); //正确，但通过p写值是未定义行为
+```cpp
+    const char *pc;
+    char *p = const_cast<char*>(pc); //正确，但通过p写值是未定义行为
 ```
 
 

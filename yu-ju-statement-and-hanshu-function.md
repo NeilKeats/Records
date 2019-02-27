@@ -281,8 +281,7 @@ C++没有真正意义的多维数组，是数组的数组。
 
 ## 调用重载的函数
 
-**函数匹配（function matching）**，又叫**重载确定（overload resolution）    
-**
+**函数匹配（function matching）**，又叫**重载确定（overload resolution）    **
 
 把函数调用与一组重载函数中的某一个关联起来。将调用的实参与重载集合中的每一个函数的形参进行比较，再根据比较结果决定调用哪个：
 

@@ -2,3 +2,4 @@
 _book
 *.md
 node_modules/*
+*/*.md

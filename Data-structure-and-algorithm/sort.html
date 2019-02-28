@@ -1,0 +1,474 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>排序算法 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-a11y-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../computer-network/networkbasic-definition.html" />
+    
+    
+    <link rel="prev" href="er-cha-shu.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    ReadMe
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">C++</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../biao-da-shi.html">
+            
+                <a href="../biao-da-shi.html">
+            
+                    
+                    表达式 expression
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../yu-ju-statement-and-hanshu-function.html">
+            
+                <a href="../yu-ju-statement-and-hanshu-function.html">
+            
+                    
+                    语句 statement & 函数 function
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Data structure and algorithm</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="er-cha-shu.html">
+            
+                <a href="er-cha-shu.html">
+            
+                    
+                    二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2" data-path="sort.html">
+            
+                <a href="sort.html">
+            
+                    
+                    排序算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Computer network</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../computer-network/networkbasic-definition.html">
+            
+                <a href="../computer-network/networkbasic-definition.html">
+            
+                    
+                    基本定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../computer-network/networktcp-udp.html">
+            
+                <a href="../computer-network/networktcp-udp.html">
+            
+                    
+                    TCP/UDP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >排序算法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5E38;&#x89C1;&#x6392;&#x5E8F;&#x65B9;&#x6CD5;"><b>1. </b>&#x5E38;&#x89C1;&#x6392;&#x5E8F;&#x65B9;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x5F00;&#x59CB;&#x4E4B;&#x524D;"><b>2. </b>&#x5F00;&#x59CB;&#x4E4B;&#x524D;</a></li><li><span class="title-icon "></span><a href="#&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><b>3. </b>&#x5FEB;&#x901F;&#x6392;&#x5E8F;</a></li><li><span class="title-icon "></span><a href="#&#x5806;&#x6392;&#x5E8F;"><b>4. </b>&#x5806;&#x6392;&#x5E8F;</a></li></ul></div><a href="#&#x5E38;&#x89C1;&#x6392;&#x5E8F;&#x65B9;&#x6CD5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><blockquote>
+<h1 id="&#x5E38;&#x89C1;&#x6392;&#x5E8F;&#x65B9;&#x6CD5;"><a name="&#x5E38;&#x89C1;&#x6392;&#x5E8F;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x5E38;&#x89C1;&#x6392;&#x5E8F;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5E38;&#x89C1;&#x6392;&#x5E8F;&#x65B9;&#x6CD5;</h1>
+<p>&#x5192;&#x6CE1;&#x3001;&#x9009;&#x62E9;&#x6392;&#x5E8F;&#x3001;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x3001;&#x5F52;&#x5E76;&#x6392;&#x5E8F;&#x3001;&#x5FEB;&#x901F;&#x6392;&#x5E8F;</p>
+</blockquote>
+<h1 id="&#x5F00;&#x59CB;&#x4E4B;&#x524D;"><a name="&#x5F00;&#x59CB;&#x4E4B;&#x524D;" class="anchor-navigation-ex-anchor" href="#&#x5F00;&#x59CB;&#x4E4B;&#x524D;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x5F00;&#x59CB;&#x4E4B;&#x524D;</h1>
+<p>&#x5148;&#x7F16;&#x5199;&#x4EA4;&#x6362;&#x5143;&#x7D20;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4EE5;&#x4FBF;&#x540E;&#x7EED;&#x6392;&#x5E8F;&#x65F6;&#x8C03;&#x7528;&#x3002;&#x90FD;&#x58F0;&#x660E;&#x4E3A;inline&#xFF0C;&#x51CF;&#x5C11;&#x8C03;&#x7528;&#x5F00;&#x9500;&#x3002;</p>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">//&#x4E0B;&#x6807;&#x5F62;&#x5F0F;&#x7684;</span>
+<span class="token keyword">inline</span> <span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> <span class="token operator">&amp;</span>v<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> tmp <span class="token operator">=</span> v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    v<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> v<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    v<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x8FED;&#x4EE3;&#x5668;&#x5F62;&#x5F0F;&#x7684;</span>
+<span class="token keyword">inline</span> <span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span><span class="token operator">::</span>iterator i1<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span><span class="token operator">::</span>iterator i2<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> tmp <span class="token operator">=</span> <span class="token operator">*</span>i1<span class="token punctuation">;</span>
+    <span class="token operator">*</span>i1 <span class="token operator">=</span> <span class="token operator">*</span>i2<span class="token punctuation">;</span>
+    <span class="token operator">*</span>i2 <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h1 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><a name="&#x5FEB;&#x901F;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5FEB;&#x901F;&#x6392;&#x5E8F;</h1>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">/*
+ * quick sort
+ */</span>
+<span class="token keyword">void</span> <span class="token function">quick_sort_recursive</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span><span class="token operator">::</span>iterator beg<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span><span class="token operator">::</span>iterator end<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>beg<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&gt;=</span> end<span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token comment">//&#x8FD9;&#x91CC;&#x9009;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x503C;&#x4F5C;&#x4E3A;&#x4E2D;&#x95F4;&#x503C;</span>
+    <span class="token comment">//&#x5B9E;&#x9645;&#x4E0A;&#x4E5F;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5176;&#x4ED6;&#x4F4D;&#x7F6E;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x4FEE;&#x6539;&#x4FDD;&#x7559;&#x4E86;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x3002;</span>
+    <span class="token keyword">auto</span> key <span class="token operator">=</span> beg<span class="token punctuation">;</span>
+    <span class="token keyword">auto</span> middle <span class="token operator">=</span> <span class="token operator">*</span>key<span class="token punctuation">;</span>
+    <span class="token keyword">auto</span> l_end <span class="token operator">=</span> beg<span class="token punctuation">,</span> curr <span class="token operator">=</span> beg<span class="token punctuation">;</span>
+    <span class="token comment">//swap key and the last</span>
+    <span class="token function">exchange_ele</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> end<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>curr <span class="token operator">!=</span> end<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">*</span>curr<span class="token operator">&lt;</span>middle<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">exchange_ele</span><span class="token punctuation">(</span>curr<span class="token punctuation">,</span> l_end<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token operator">++</span>l_end<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token operator">++</span>curr<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">exchange_ele</span><span class="token punctuation">(</span>end<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> l_end<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">quick_sort_recursive</span><span class="token punctuation">(</span>beg<span class="token punctuation">,</span>l_end<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">quick_sort_recursive</span><span class="token punctuation">(</span>l_end<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>end<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">quick_sort</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> <span class="token operator">&amp;</span>v<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">quick_sort_recursive</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> v<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h1 id="&#x5806;&#x6392;&#x5E8F;"><a name="&#x5806;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x5806;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x5806;&#x6392;&#x5E8F;</h1>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">/*
+ * Heap sort
+ */</span>
+<span class="token keyword">void</span> <span class="token function">siftdown</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> <span class="token operator">&amp;</span>v<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> len<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//for i (start from 0 to n-1 )</span>
+    <span class="token comment">//left   : 2*i + 1</span>
+    <span class="token comment">//right  : 2*i + 2</span>
+    <span class="token comment">//father : (i-1)/2</span>
+    <span class="token keyword">int</span> son <span class="token operator">=</span> <span class="token number">2</span><span class="token operator">*</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>son<span class="token operator">&gt;=</span>len<span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>son<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> len <span class="token operator">&amp;&amp;</span> v<span class="token punctuation">[</span>son<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> v<span class="token punctuation">[</span>son<span class="token punctuation">]</span> <span class="token punctuation">)</span>
+        <span class="token operator">++</span>son<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&gt;=</span> v<span class="token punctuation">[</span>son<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token function">swap</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> i<span class="token punctuation">,</span> son<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//recursive</span>
+    <span class="token keyword">return</span> <span class="token function">siftdown</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> son<span class="token punctuation">,</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">heap_sort</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> <span class="token operator">&amp;</span>v<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//sift down from the last father to the root</span>
+    <span class="token comment">//O(N)</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">&gt;=</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token operator">--</span>i<span class="token punctuation">)</span>
+        <span class="token function">siftdown</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>i<span class="token punctuation">,</span>v<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//O(NlogN)</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>v<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token operator">--</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">swap</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//the last element swap to the first </span>
+        <span class="token comment">//then go down.</span>
+        <span class="token function">siftdown</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<p><a href="https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity" title="&#x5982;&#x4F55;&#x5728;O\(N\)&#x65F6;&#x95F4;&#x5185;&#x5EFA;&#x5806;" target="_blank">https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity</a></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%A0%86%E6%8E%92%E5%BA%8F" title="Wiki.&#x5806;&#x6392;&#x5E8F;" target="_blank">https://zh.wikipedia.org/wiki/%E5%A0%86%E6%8E%92%E5%BA%8F</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="er-cha-shu.html" class="navigation navigation-prev " aria-label="Previous page: 二叉树">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../computer-network/networkbasic-definition.html" class="navigation navigation-next " aria-label="Next page: 基本定义">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"排序算法","level":"3.2","depth":1,"next":{"title":"基本定义","level":"4.1","depth":1,"path":"computer-network/networkbasic-definition.md","ref":"computer-network/networkbasic-definition.md","articles":[]},"previous":{"title":"二叉树","level":"3.1","depth":1,"path":"Data-structure-and-algorithm/er-cha-shu.md","ref":"Data-structure-and-algorithm/er-cha-shu.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["disqus","theme-comscore","-lunr","-search","search-plus","advanced-emoji","splitter","expandable-chapters-small","-highlight","prism","prism-themes","book-summary-scroll-position-saver","sharing","expandable-chapters","anchor-navigation-ex","katex"],"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-a11y-dark.css"]},"disqus":{"useIdentifier":false,"shortName":"neilkeats"},"book-summary-scroll-position-saver":{},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"theme-comscore":{},"prism-themes":{},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Data-structure-and-algorithm/sort.md","mtime":"2019-02-28T07:04:21.824Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-28T07:12:16.770Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

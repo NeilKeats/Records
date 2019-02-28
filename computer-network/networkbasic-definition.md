@@ -58,6 +58,8 @@
 
 ### 模型
 
+![](/assets/NetWork_OSI_MODEL.png)
+
 ### 五层简介
 
 > 各层的传输单元都可以称为分组，在OSI模型中成为**PDU\(Protocol Data Unit\)**
@@ -79,6 +81,8 @@
    2. 检错、纠错功能
 5. **物理层\(physical layer\)**
    1. 提供透明传输**比特流**的功能，
+
+
 
 
 

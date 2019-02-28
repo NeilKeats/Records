@@ -27,6 +27,9 @@ inline void swap(vector<int>::iterator i1, vector<int>::iterator i2){
 # 快速排序
 
 ```cpp
+/*
+ * quick sort
+ */
 void quick_sort_recursive(vector<int>::iterator beg, vector<int>::iterator end){
     if(beg+1 >= end)
         return;
@@ -55,13 +58,46 @@ void quick_sort(vector<int> &v){
 }
 ```
 
-
-
 # 堆排序
 
+```cpp
+/*
+ * Heap sort
+ */
+void siftdown(vector<int> &v, int i, int len){
+	//for i (start from 0 to n-1 )
+	//left   : 2*i + 1
+	//right  : 2*i + 2
+	//father : (i-1)/2
+	int son = 2*i + 1;
+	if(son>=len)
+		return;
+	if((son+1) < len && v[son+1] > v[son] )
+		++son;
+	if(v[i]>= v[son])
+		return;
+	swap(v, i, son);
+	//recursive
+	return siftdown(v, son, len);
+}
 
-
-
+void heap_sort(vector<int> &v){
+	//sift down from the last father to the root
+	//O(N)
+	for(int i=(v.size()-2)/2; i>=0; --i)
+		siftdown(v,i,v.size());
+	
+	//O(NlogN)
+	for(int i=v.size()-1; i>0; --i){
+		swap(v,0,i);
+		//the last element swap to the first 
+		//then go down.
+		siftdown(v,0,i);
+	}
+	
+	return;
+}
+```
 
 
 

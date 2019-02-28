@@ -4,8 +4,8 @@
 
 ## C++
 
-* [表达式 expression](biao-da-shi.md)
-* [语句 statement & 函数 function](yu-ju-statement-and-hanshu-function.md)
+* [表达式 expression](C++/biao-da-shi.md)
+* [语句 statement & 函数 function](C++/yu-ju-statement-and-hanshu-function.md)
 
 ## Data structure and algorithm
 

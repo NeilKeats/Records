@@ -99,9 +99,11 @@ void heap_sort(vector<int> &v){
 }
 ```
 
-[^1][^2]
+参考：
 
-[^1]: [Wiki堆排序.](https://zh.wikipedia.org/wiki/%E5%A0%86%E6%8E%92%E5%BA%8F)
+[https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity](https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity "如何在O\(N\)时间内建堆")
 
-[^2]: [How to building a heap be O\(N\) time complexity.](https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity)
+[https://zh.wikipedia.org/wiki/%E5%A0%86%E6%8E%92%E5%BA%8F](https://zh.wikipedia.org/wiki/%E5%A0%86%E6%8E%92%E5%BA%8F "Wiki.堆排序")
+
+
 

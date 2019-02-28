@@ -10,6 +10,7 @@
 ## Data structure and algorithm
 
 * [二叉树](er-cha-shu.md)
+* [常见排序算法](sort.md)
 
 ## Computer network
 

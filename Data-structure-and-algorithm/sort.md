@@ -65,39 +65,43 @@ void quick_sort(vector<int> &v){
  * Heap sort
  */
 void siftdown(vector<int> &v, int i, int len){
-	//for i (start from 0 to n-1 )
-	//left   : 2*i + 1
-	//right  : 2*i + 2
-	//father : (i-1)/2
-	int son = 2*i + 1;
-	if(son>=len)
-		return;
-	if((son+1) < len && v[son+1] > v[son] )
-		++son;
-	if(v[i]>= v[son])
-		return;
-	swap(v, i, son);
-	//recursive
-	return siftdown(v, son, len);
+    //for i (start from 0 to n-1 )
+    //left   : 2*i + 1
+    //right  : 2*i + 2
+    //father : (i-1)/2
+    int son = 2*i + 1;
+    if(son>=len)
+        return;
+    if((son+1) < len && v[son+1] > v[son] )
+        ++son;
+    if(v[i]>= v[son])
+        return;
+    swap(v, i, son);
+    //recursive
+    return siftdown(v, son, len);
 }
 
 void heap_sort(vector<int> &v){
-	//sift down from the last father to the root
-	//O(N)
-	for(int i=(v.size()-2)/2; i>=0; --i)
-		siftdown(v,i,v.size());
-	
-	//O(NlogN)
-	for(int i=v.size()-1; i>0; --i){
-		swap(v,0,i);
-		//the last element swap to the first 
-		//then go down.
-		siftdown(v,0,i);
-	}
-	
-	return;
+    //sift down from the last father to the root
+    //O(N)
+    for(int i=(v.size()-2)/2; i>=0; --i)
+        siftdown(v,i,v.size());
+
+    //O(NlogN)
+    for(int i=v.size()-1; i>0; --i){
+        swap(v,0,i);
+        //the last element swap to the first 
+        //then go down.
+        siftdown(v,0,i);
+    }
+
+    return;
 }
 ```
 
+[^1][^2]
 
+[^1]: [Wiki堆排序.](https://zh.wikipedia.org/wiki/%E5%A0%86%E6%8E%92%E5%BA%8F)
+
+[^2]: [How to building a heap be O\(N\) time complexity.](https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity)
 

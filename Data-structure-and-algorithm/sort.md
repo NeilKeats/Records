@@ -7,8 +7,8 @@
 先编写交换元素的函数，以便后续排序时调用。都声明为inline，减少调用开销。
 
 ```cpp
-//数组形式的
-inline void exchange_ele(vector<int> &v, int i, int j){
+//下标形式的
+inline void swap(vector<int> &v, int i, int j){
     int tmp = v[i];
     v[i] = v[j];
     v[j] = tmp;
@@ -16,11 +16,11 @@ inline void exchange_ele(vector<int> &v, int i, int j){
 };
 
 //迭代器形式的
-inline void exchange_ele(vector<int>::iterator i1, vector<int>::iterator i2){
-    int tmp = *i1;
-    *i1 = *i2;
-    *i2 = tmp;
-    return;
+inline void swap(vector<int>::iterator i1, vector<int>::iterator i2){
+	int tmp = *i1;
+	*i1 = *i2;
+	*i2 = tmp;
+	return;
 };
 ```
 

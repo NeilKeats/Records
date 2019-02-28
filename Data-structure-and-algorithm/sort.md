@@ -17,10 +17,10 @@ inline void swap(vector<int> &v, int i, int j){
 
 //迭代器形式的
 inline void swap(vector<int>::iterator i1, vector<int>::iterator i2){
-	int tmp = *i1;
-	*i1 = *i2;
-	*i2 = tmp;
-	return;
+    int tmp = *i1;
+    *i1 = *i2;
+    *i2 = tmp;
+    return;
 };
 ```
 
@@ -49,11 +49,19 @@ void quick_sort_recursive(vector<int>::iterator beg, vector<int>::iterator end){
     quick_sort_recursive(l_end+1,end);
 }
 
-vector<int> &quick_sort(vector<int> &v){
+void quick_sort(vector<int> &v){
     quick_sort_recursive(v.begin(), v.end());
-    return v;
+    return;
 }
 ```
+
+
+
+# 堆排序
+
+
+
+
 
 
 

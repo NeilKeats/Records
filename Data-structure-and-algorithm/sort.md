@@ -17,10 +17,10 @@ inline void exchange_ele(vector<int> &v, int i, int j){
 
 //迭代器形式的
 inline void exchange_ele(vector<int>::iterator i1, vector<int>::iterator i2){
-	int tmp = *i1;
-	*i1 = *i2;
-	*i2 = tmp;
-	return;
+    int tmp = *i1;
+    *i1 = *i2;
+    *i2 = tmp;
+    return;
 };
 ```
 
@@ -30,6 +30,8 @@ inline void exchange_ele(vector<int>::iterator i1, vector<int>::iterator i2){
 void quick_sort_recursive(vector<int>::iterator beg, vector<int>::iterator end){
     if(beg+1 >= end)
         return;
+    //这里选第一个元素的值作为中间值
+    //实际上也可以选择其他位置的元素，为了方便修改保留了这个变量。
     auto key = beg;
     auto middle = *key;
     auto l_end = beg, curr = beg;

@@ -14,7 +14,7 @@
 
 6. TCP的**滑动窗口**、**流量控制**、**拥塞控制**和**连接管理**
 
-
+![](/assets/TCP_UDP_Application.png)
 
 
 

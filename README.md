@@ -9,8 +9,6 @@
 * **计算机网络，**
 * **安卓**
 
-具体可参见：[目录](SUMMARY.md)
-
 > 作者：
 >
 > \[炎之凯\]\([https://github.com/totond](https://github.com/totond%29\)

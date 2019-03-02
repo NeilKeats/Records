@@ -38,6 +38,25 @@ public:
 
 
 
+```cpp
+class Solution {
+private:
+    ListNode *reverseList_recursively(ListNode *prev,ListNode *curr){
+        if(!curr)
+            return prev;
+        ListNode *nxt = curr->next;
+        curr->next = prev;
+        
+        return reverseList_recursively(curr, nxt);
+    }
+
+public:
+    ListNode* reverseList(ListNode* head) {
+        return reverseList_recursively(nullptr,head);
+    }
+};
+```
+
 ## 从尾到头输出链表
 
 > OJ：[牛客](https://www.nowcoder.com/practice/d0267f7f55b3412ba93bd35cfa8e8035?tpId=13&tqId=11156&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)

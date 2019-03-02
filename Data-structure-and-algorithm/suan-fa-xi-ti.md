@@ -30,7 +30,37 @@ public:
 
 保存两个指针，一个previous指针指向当前元素的前驱，一个当前指针`curr`（可用`pHead`代替）。用到临时指针`nex`用作交换。
 
-## 从尾到头
+## 从尾到头输出链表
+
+由于单向链表无法反向遍历，因此自然可以想到利用栈（先进后出）来解决。
+
+栈的利用，可以通过递归调用来达到，也可以自己对栈进行操作。
+
+**递归实现**
+
+
+
+**调用栈结构实现**
+
+```cpp
+class Solution {
+public:
+    vector<int> printListFromTailToHead(ListNode* head) {
+        stack<ListNode*> stk;
+        vector<int> arr;
+        while(head){
+            stk.push(head);
+            head = head->next;
+        }
+        while(!stk.empty()){
+            head = stk.top();
+            stk.pop();
+            arr.push_back(head->val);
+        }
+        return arr;
+    }
+};
+```
 
 ---
 

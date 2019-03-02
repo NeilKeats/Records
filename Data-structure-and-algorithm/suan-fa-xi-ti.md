@@ -1,4 +1,4 @@
-> wLeetcode & 剑指offer题
+> Leetcode & 剑指offer题
 
 # 字符串
 
@@ -72,6 +72,10 @@ public:
 栈的利用，可以通过递归调用来达到，也可以自己对栈进行操作。
 
 **递归实现**
+
+时间复杂度：$$ O(N) $$
+
+空间复杂度：$$ O(N) $$，（因为调用栈深为N）
 
 ```cpp
 class Solution {

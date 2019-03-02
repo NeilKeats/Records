@@ -84,7 +84,7 @@ public:
 
 空间复杂度：$$ O(N) $$，栈深为N
 
-也有方法为使用\`vector\`，顺序存储后，再inverse（调用stl函数）
+也有方法为使用`vector`，顺序存储后，再inverse（调用stl函数）
 
 # 树
 

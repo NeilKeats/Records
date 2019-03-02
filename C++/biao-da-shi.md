@@ -113,13 +113,19 @@ vector<int> vi={1,2,3,4,5};
 | \| | 位或 |
 | ^ | 位异或 |
 
-左移/右移，**右侧运算对象不能为负值**且不可超过结果位数，移出界外的值舍弃
+* 左移/右移，**右侧运算对象不能为负值**且不可超过结果位数，移出界外的值舍弃
+* 左移运算符`<<`右侧用0填充，对于无符号/有符号类型一样
+* 右移运算符`>>`的左侧填充bit与类型有关：无符号类型填充0，有符号类型根据实现不同或填充0或填充符号位（微软的实现中填充符号位）
 
-## 移位运算符
+[https://docs.microsoft.com/en-us/cpp/cpp/left-shift-and-right-shift-operators-input-and-output?view=vs-2017](https://docs.microsoft.com/en-us/cpp/cpp/left-shift-and-right-shift-operators-input-and-output?view=vs-2017 "Shift operators")
+
+### 移位运算符（IO运算符）
 
 ```cpp
 cout<<"hi"<<" there"<<endl;
 ```
+
+重载版本常用于IO操作，结合律优先级与原来一样。
 
 左结合律，返回左值。运算优先级比关系、赋值、条件运算符的优先级高。
 

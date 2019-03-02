@@ -1,6 +1,6 @@
 # Summary
 
-* [ReadMe](README.md)
+为保证阅读效果，建议转跳到[Gitbook](https://hdnotes.gitbook.io/ns/)或[GithubIO](https://neilkeats.github.io/Records/)
 
 ## C++
 

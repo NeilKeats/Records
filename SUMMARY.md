@@ -11,7 +11,7 @@
 
 ## Data structure & Algorithm
 
-* [二叉树](Data-structure-and-algorithm/er-cha-shu.md)
+* [树](Data-structure-and-algorithm/er-cha-shu.md)
 * [排序算法](Data-structure-and-algorithm/sort.md)
 
 ## Computer network

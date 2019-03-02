@@ -1,6 +1,6 @@
 > **常见排序方法**
 >
-> 冒泡、选择排序、插入排序、归并排序、快速排序
+> 冒泡排序、选择排序、插入排序、归并排序、快速排序、堆排序
 
 # 开始之前
 
@@ -14,7 +14,9 @@ inline void swap(vector<int> &v, int i, int j){
     v[j] = tmp;
     return;
 };
+```
 
+```cpp
 //迭代器形式的
 inline void swap(vector<int>::iterator i1, vector<int>::iterator i2){
     int tmp = *i1;
@@ -22,6 +24,115 @@ inline void swap(vector<int>::iterator i1, vector<int>::iterator i2){
     *i2 = tmp;
     return;
 };
+```
+
+# 冒泡排序
+
+```cpp
+/*
+ * bubble sort
+ */
+void vbubble_sort(vector<int> &v){
+    int len = v.size();
+    for(int i = len-1; i>=0; --i)
+        for(int j = 0; j<i; ++j )
+            if(v[j]>v[j+1])
+                swap(v,j,j+1);
+    
+    return;
+}
+```
+
+# 选择排序
+
+```cpp
+/*
+ * selection sort
+ */
+void selection_sort(vector<int> &v){
+	int len=v.size();
+	for(int i=len-1; i>0; --i){
+		//find max
+		int max=INT_MIN, max_id=0;
+		for(int j=0; j<=i; ++j){
+			if(v[j]>max){
+				max_id = j;
+				max = v[j];
+			}
+		}
+		swap(v,max_id,i);
+	}
+	return;
+}
+```
+
+# 插入排序
+
+```cpp
+/*
+ * insert sort
+ */
+void insert_sort(vector<int> &v){
+	int len=v.size();
+	int left=0, right;
+	for(right=1; right<len; ++right){
+		int j=right;
+		int value = v[j];
+		while(j>=1 && value<v[j-1]){
+			v[j] = v[j-1];
+			--j;
+		}
+		v[j] = value;
+	}
+	return;
+}
+```
+
+# 归并排序
+
+```cpp
+/*
+ * merge sort
+ */
+void merge_sort_recursive(vector<int>::iterator beg, vector<int>::iterator end){
+	if(beg+1>=end)
+		return;
+	
+	auto middle = beg + (end-beg)/2;	
+	merge_sort_recursive(beg,middle);
+	merge_sort_recursive(middle, end);
+	
+	vector<int> tmp_v(beg,end);
+	auto t1 = tmp_v.begin();
+	auto t2_end = tmp_v.end();
+	auto t1_end =  t1 + (t2_end - t1)/2, t2 = t1_end;
+	
+	while(t1 != t1_end && t2 != t2_end){
+		if(*t1 <= *t2){
+			*beg = *t1;
+			++t1;
+		}else{
+			*beg = *t2;
+			++t2;	
+		}
+		++beg;
+	}
+	if(t1 == t1_end){
+		t1 = t2;
+		t1_end = t2_end;
+	}
+	while(t1 != t1_end){
+		*beg = *t1;
+		++t1;
+		++beg;
+	}
+	
+}
+
+void merge_sort(vector<int> &v){
+	merge_sort_recursive(v.begin(), v.end());
+	return;
+}
 ```
 
 # 快速排序
@@ -98,6 +209,8 @@ void heap_sort(vector<int> &v){
     return;
 }
 ```
+
+---
 
 参考：
 

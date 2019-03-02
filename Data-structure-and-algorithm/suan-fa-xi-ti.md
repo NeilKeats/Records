@@ -8,7 +8,7 @@
 
 ## 反转链表
 
-> OJ：[牛客](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&tqId=11168&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)，
+> OJ：[牛客](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&tqId=11168&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)， [Leetcode\[easy\]](https://leetcode.com/problems/reverse-linked-list/)
 
 保存两个指针，一个`prev` 指针指向当前元素的前驱，一个当前指针`curr`（可用`pHead`代替）。用到临时指针`nex`用作交换。
 

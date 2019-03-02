@@ -1,25 +1,21 @@
 # Summary
 
-# C++
+## Previous
+
+* [Introduction](README.md)
+
+## C++
 
 * [表达式 expression](C++/biao-da-shi.md)
 * [语句 statement & 函数 function](C++/yu-ju-statement-and-hanshu-function.md)
 
-# JAVA
-
-待补充...
-
-# Data structure and algorithm
+## Data structure & Algorithm
 
 * [二叉树](Data-structure-and-algorithm/er-cha-shu.md)
 * [排序算法](Data-structure-and-algorithm/sort.md)
 
-# Computer network
+## Computer network
 
 * [基本定义](computer-network/networkbasic-definition.md)
 * [TCP/UDP](computer-network/networktcp-udp.md)
-
-# Android
-
-待补充...
 

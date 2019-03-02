@@ -8,6 +8,12 @@
 
 ## 反转链表
 
+保存两个指针，一个previous指针指向当前元素的前驱，一个当前指针`curr`（可用`pHead`代替）。用到临时指针`nex`用作交换。
+
+时间复杂度：O\(N\)
+
+空间复杂度：O\(1\)
+
 ```cpp
 class Solution {
 public:
@@ -23,12 +29,6 @@ public:
     }
 };
 ```
-
-时间复杂度：$$ O(N) $$
-
-空间复杂度：$$O(1)$$
-
-保存两个指针，一个previous指针指向当前元素的前驱，一个当前指针`curr`（可用`pHead`代替）。用到临时指针`nex`用作交换。
 
 ## 从尾到头输出链表
 
@@ -60,6 +60,10 @@ public:
 
 **调用栈结构实现**
 
+时间复杂度：$$ O(N) $$
+
+空间复杂度：$$ O(N) $$，（因为栈深为N）
+
 ```cpp
 class Solution {
 public:
@@ -79,10 +83,6 @@ public:
     }
 };
 ```
-
-时间复杂度：$$ O(N) $$
-
-空间复杂度：$$ O(N) $$，栈深为N
 
 也有方法为使用`vector`，顺序存储后，再inverse（调用stl函数）
 
@@ -104,7 +104,9 @@ public:
 
 实际上，可知当前节点的深度`curr = 1 + max(left, right);`
 
-因此可以使用**递归**计算树的深度（实际上是深度优先搜索DFS）
+**递归**计算树的深度（深度优先搜索DFS遍历方法）
+
+
 
 ```
 
@@ -112,7 +114,38 @@ public:
 
 此外，前文提到，可以直接遍历树，维护一个最深叶子深度。想一想，遍历方法中分为DFS和BFS，而DFS可以使用上述的递归方法求。对于BFS，实际上层序遍历可以通过队列实现，并且通常需要判断**换层**操作。那么只需要统计**换层**的次数，最后就可以知道整棵树的深度。
 
+**非递归**计算树的深度（广度优先BFS遍历方法）
 
+```cpp
+class Solution {
+public:
+    int TreeDepth(TreeNode* pRoot)
+    {
+        queue<TreeNode*> q;
+        int deep= 0;
+        TreeNode *last = pRoot, *nlast;
+        if(pRoot)
+            q.push(pRoot);
+        while(!q.empty()){
+            TreeNode *cur = q.front();
+            q.pop();
+            if(cur->left){
+                q.push(cur->left);
+                nlast = cur->left;
+            }
+            if(cur->right){
+                q.push(cur->right);
+                nlast = cur->right;
+            }
+            if(cur == last ){
+                ++deep;
+                last = nlast;
+            }
+        }
+        return deep;
+    }
+};
+```
 
 ---
 

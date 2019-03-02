@@ -36,7 +36,9 @@ public:
 
 **递归方法**
 
+时间复杂度：$$ O(N) $$
 
+空间复杂度：$$ O(1) $$ （？考虑到递归的栈开销，使用了尾递归，Leetcode的subbmission显示内存占用与跟非递归的基本一致，因此可以认为是$$ O(1) $$）
 
 ```cpp
 class Solution {
@@ -46,7 +48,7 @@ private:
             return prev;
         ListNode *nxt = curr->next;
         curr->next = prev;
-        
+
         return reverseList_recursively(curr, nxt);
     }
 
@@ -56,6 +58,10 @@ public:
     }
 };
 ```
+
+> PS，显然这里没太大必要使用递归方法，毕竟还有额外的调用开销
+>
+> 上面的代码在Leetcode提交，递归版本运行时间为16ms，而非递归仅需要8ms
 
 ## 从尾到头输出链表
 

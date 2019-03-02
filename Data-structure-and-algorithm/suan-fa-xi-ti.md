@@ -106,8 +106,18 @@ public:
 
 根据这个规律可以**递归**计算树的深度（深度优先搜索DFS遍历方法）
 
-```
-
+```cpp
+class Solution {
+public:
+    int TreeDepth(TreeNode* pRoot)
+    {
+        if(!pRoot)
+            return 0;
+        int dep_l = TreeDepth(pRoot->left);
+        int dep_r = TreeDepth(pRoot->right);
+        return (1 + (dep_l>dep_r? dep_l : dep_r));
+    }
+};
 ```
 
 此外，前文提到，可以直接遍历树，维护一个最深叶子深度。想一想，遍历方法中分为DFS和BFS，而DFS可以使用上述的递归方法求。对于BFS，实际上层序遍历可以通过队列实现，并且通常需要判断**换层**操作。那么只需要统计**换层**的次数，最后就可以知道整棵树的深度。

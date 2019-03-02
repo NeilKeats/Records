@@ -96,8 +96,10 @@ public:
 
 ## 后序遍历
 
-## 求树的深度
+## 求二叉树的深度
 
+> OJ：[牛客](https://www.nowcoder.com/practice/435fb86331474282a3499955f0a41e8b?tpId=13&tqId=11191&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
+>
 > 求树的深度**需要遍历整棵树**，因为遍历完毕之前，总有可能存在存在一条未走完的路径比当前最长路径更长。
 >
 > 直观的想法是，直接遍历树，并维护一个最深的叶子的深度，不断更新。

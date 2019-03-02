@@ -38,7 +38,25 @@ public:
 
 **递归实现**
 
-
+```cpp
+class Solution {
+private:
+    void TraversalFromTail_Recursive(vector<int> &vi,ListNode* curr){
+        if(!curr)
+            return;
+        TraversalFromTail_Recursive(vi, curr->next);
+        vi.push_back(curr->val);
+        return ;
+    }
+public:
+    vector<int> printListFromTailToHead(ListNode* head) {
+        stack<ListNode*> stk;
+        vector<int> arr;
+        TraversalFromTail_Recursive(arr, head);
+        return arr;
+    }
+};
+```
 
 **调用栈结构实现**
 

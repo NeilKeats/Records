@@ -200,6 +200,14 @@ public:
 };
 ```
 
+## 求二叉树最小深度
+
+> [Leetcode\[easy\]](https://leetcode.com/problems/minimum-depth-of-binary-tree/submissions/)
+
+题目与上面类似，区别在于求最小深度可以提前终止搜索。因此，采取BFS更合理
+
+
+
 ---
 
 # 其他

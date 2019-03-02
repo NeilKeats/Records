@@ -8,6 +8,8 @@
 
 ## 反转链表
 
+> OJ：[牛客](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&tqId=11168&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
+
 保存两个指针，一个`prev` 指针指向当前元素的前驱，一个当前指针`curr`（可用`pHead`代替）。用到临时指针`nex`用作交换。
 
 时间复杂度：$$ O(N) $$
@@ -31,6 +33,8 @@ public:
 ```
 
 ## 从尾到头输出链表
+
+> OJ：[牛客](https://www.nowcoder.com/practice/d0267f7f55b3412ba93bd35cfa8e8035?tpId=13&tqId=11156&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
 由于单向链表无法反向遍历，因此自然可以想到利用栈（先进后出）来解决。
 

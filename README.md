@@ -1,27 +1,23 @@
 > 为保证阅读效果，建议转跳到[Gitbook](https://hdnotes.gitbook.io/ns/)或[GithubIO](https://neilkeats.github.io/Records/)
 
-# C++
+# Introduction
 
-* [表达式 expression](C++/biao-da-shi.md)
-* [语句 statement & 函数 function](C++/yu-ju-statement-and-hanshu-function.md)
+使用gitbook构建的计算机笔记，内容包括：
 
-# JAVA
+* **C++/JAVA，**
+* **数据结构，**
+* **计算机网络，**
+* **安卓**
 
-
-
-# Data structure and algorithm
-
-* [二叉树](Data-structure-and-algorithm/er-cha-shu.md)
-* [排序算法](Data-structure-and-algorithm/sort.md)
-
-# Computer network
-
-* [基本定义](computer-network/networkbasic-definition.md)
-* [TCP/UDP](computer-network/networktcp-udp.md)
-
-# Android
+具体可参见：[目录](SUMMARY.md)
 
 
+
+> 作者：
+
+> \[炎之凯\]\([https://github.com/totond](https://github.com/totond%5C)\)
+
+> \[Neilkeats\]\([https://github.com/NeilKeats](https://github.com/NeilKeats)\)
 
 
 

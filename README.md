@@ -11,7 +11,7 @@
 
 > 作者：
 >
-> \[炎之凯\]\([https://github.com/totond](https://github.com/totond%29\)
+> \[炎之凯\]\([https://github.com/totond](https://github.com/totond)\)
 >
 > \[Neilkeats\]\([https://github.com/NeilKeats](https://github.com/NeilKeats)\)
 

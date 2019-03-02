@@ -131,7 +131,7 @@ public:
 
 ## 后序遍历
 
-## 求二叉树的最大/最小深度
+## 求二叉树的最大深度
 
 > OJ：[牛客](https://www.nowcoder.com/practice/435fb86331474282a3499955f0a41e8b?tpId=13&tqId=11191&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)，[Leetcode\[easy\]](https://leetcode.com/problems/maximum-depth-of-binary-tree/submissions/)
 >

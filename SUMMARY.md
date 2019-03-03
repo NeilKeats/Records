@@ -4,7 +4,7 @@
 
 * [表达式 expression](C++/biao-da-shi.md)
 * [语句 statement & 函数 function](C++/yu-ju-statement-and-hanshu-function.md)
-* [常见及重要问题](chang-jian-ji-zhong-yao-wen-ti.md)
+* [常见重要问题](C++/chang-jian-ji-zhong-yao-wen-ti.md)
 
 ## JAVA
 

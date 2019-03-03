@@ -125,6 +125,18 @@ public:
 
 > 也有方法为使用`vector`，顺序存储后，再inverse（调用stl函数）
 
+## 删除有序链表中的重复结点
+
+**问题描述**：Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only _distinct_ numbers from the original list. 在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 
+
+**Input**: 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 
+
+**Output**: 1-&gt;2-&gt;5
+
+> OJ：[牛客](https://www.nowcoder.com/practice/fc533c45b73a41b0b44ccba763f866ef?tpId=13&tqId=11209&tPage=3&rp=3&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)，[Leetcode\[medium\]](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)。（此外还有简化版，保留一个重复出现过的结点，见[Leetcode\[easy\]](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)）
+
+
+
 ---
 
 # 树
@@ -139,7 +151,7 @@ public:
 
 > OJ：[牛客](https://www.nowcoder.com/practice/435fb86331474282a3499955f0a41e8b?tpId=13&tqId=11191&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)，[Leetcode\[easy\]](https://leetcode.com/problems/maximum-depth-of-binary-tree/submissions/)
 >
-> 求树的深度**需要遍历整棵树**，因为遍历完毕之前，总有可能存在存在一条未走完的路径比当前最长路径更长。
+> 求树的**最大**深度**需要遍历整棵树**，因为遍历完毕之前，总有可能存在存在一条未走完的路径比当前最长路径更长。
 >
 > 直观的想法是，直接遍历树，并维护一个最深的叶子的深度，不断更新。
 

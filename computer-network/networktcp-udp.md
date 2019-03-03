@@ -322,7 +322,7 @@ TCP采用C-S方式建立连接
 
 ### 连接建立：三次握手
 
-
+![](/assets/TCP_establish.png)
 
 1. 服务端B监听（Listen）
 2. 客户端A发生连接请求报文，SYN=1，ACK=0，序号seq=x（SYN报文段不携带数据，但消耗一个序号）。**客户端**进入`SYN_SENT`状态

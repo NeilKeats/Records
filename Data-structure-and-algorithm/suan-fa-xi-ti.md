@@ -127,15 +127,46 @@ public:
 
 ## 删除有序链表中的重复结点
 
-**问题描述**：Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only _distinct_ numbers from the original list. 在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 
+**问题描述**：Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only _distinct_ numbers from the original list. 在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。
 
-**Input**: 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 
+**Input**: 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5
 
 **Output**: 1-&gt;2-&gt;5
 
 > OJ：[牛客](https://www.nowcoder.com/practice/fc533c45b73a41b0b44ccba763f866ef?tpId=13&tqId=11209&tPage=3&rp=3&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)，[Leetcode\[medium\]](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)。（此外还有简化版，保留一个重复出现过的结点，见[Leetcode\[easy\]](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)）
 
+思路：保留两个指针，一个指向重复的开头，一个指向连续重复结点的尾部，中间全部的节点都需要删除。
 
+由于是排序链表，实际上只需在第一次遇到重复结点时`(curr->next)->val == curr->val `，保留第一个指针`curr`不动（实际需要保留前驱`prev`），第二个指针`right`不断后移直至遇到非重复结点，这时就可以执行删除。
+
+```cpp
+class Solution {
+public:
+    ListNode* deleteDuplication(ListNode* pHead)
+    {
+        if(!pHead)
+            return pHead;
+        ListNode dummy(0);
+        dummy.next = pHead;
+        ListNode *prev = &dummy, *curr=pHead;
+        while(curr->next){
+            if((curr->next)->val != curr->val){
+                prev = curr;
+                curr = curr->next;
+            }else{
+                ListNode *right = curr->next;
+                int val = curr->val;
+                while(right && right->val == val)
+                    right = right->next;
+                prev->next = right;
+                //delete ?
+                curr = prev;
+            }
+        }
+        return dummy.next;
+    }
+};
+```
 
 ---
 

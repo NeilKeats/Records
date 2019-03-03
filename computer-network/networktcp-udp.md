@@ -337,7 +337,7 @@ TCP采用C-S方式建立连接
 
 ### 连接释放：四次挥手
 
-
+![](/assets/TCP_release.png)
 
 1. A发送FIN=1，seq=u的释放报文，进入`FIN_WAIT-1`状态（FIN报文不携带数据也要消耗一个序号）
 2. B收到后，发出确认，确认号ack=u+1，seq=v，并进入`CLOSE-WAIT`状态。（此时TCP通知应用，A到B方向的连接释放了，而B可能还有数据要发，B到A的连接没释放）

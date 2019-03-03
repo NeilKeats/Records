@@ -356,5 +356,5 @@ TCP采用C-S方式建立连接
 
 ## TCP状态机
 
-
+![](/assets/TCP_state_machine.png)
 

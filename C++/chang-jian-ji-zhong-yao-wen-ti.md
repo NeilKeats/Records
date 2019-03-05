@@ -14,19 +14,18 @@
 
 ## new与malloc的区别：
 
-[细说new与malloc的10点区别  
-](https://www.cnblogs.com/QG-whz/p/5140930.html)
+[细说new与malloc的10点区别  ](https://www.cnblogs.com/QG-whz/p/5140930.html)
 
-[In what cases do I use malloc vs new?  
+[In what cases do I use malloc vs new?    
 ](https://stackoverflow.com/questions/184537/in-what-cases-do-i-use-malloc-vs-new)
 
 # 类与继承
 
 ## 虚基类，虚继承
 
-[虚基类](https://zh.wikipedia.org/wiki/%E8%99%9A%E7%BB%A7%E6%89%BF)
+[虚基类](https://zh.wikipedia.org/wiki/虚继承)
 
-[虚继承](https://zh.wikipedia.org/wiki/%E8%99%9A%E7%BB%A7%E6%89%BF)
+[虚继承](https://zh.wikipedia.org/wiki/虚继承)
 
 ## 虚函数/纯虚函数，虚函数表
 

@@ -12,7 +12,11 @@
 
 ++iter; 与 iter++;
 
----
+## new与malloc的区别：
+
+[细说new与malloc的10点区别](https://www.cnblogs.com/QG-whz/p/5140930.html)
+
+[In what cases do I use malloc vs new?](https://stackoverflow.com/questions/184537/in-what-cases-do-i-use-malloc-vs-new)
 
 # 类与继承
 

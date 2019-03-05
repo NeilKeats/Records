@@ -16,10 +16,12 @@
 
 [细说new与malloc的10点区别  ](https://www.cnblogs.com/QG-whz/p/5140930.html)
 
-[In what cases do I use malloc vs new?    
+[In what cases do I use malloc vs new?      
 ](https://stackoverflow.com/questions/184537/in-what-cases-do-i-use-malloc-vs-new)
 
 # 类与继承
+
+[多态与虚函数](http://huqunxing.site/2016/09/08/C++%20%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7%E4%B9%8B%E5%A4%9A%E6%80%81/)
 
 ## 虚基类，虚继承
 

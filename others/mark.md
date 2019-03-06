@@ -114,6 +114,7 @@
 * 让你写一个线程池需要写什么功能。【？】
 
 * vector是线程安全的吗？用什么可以保证vector的线程安全。【？】
+
 * 有哪些实现同步的方式，如何确保线程释放锁。【？】
 
 ---
@@ -151,7 +152,7 @@
 * 项目为什么使用GPU？
 * CUDA与C区别
   * CUDA是一种平台，同样也包括编程语言（CUDA C，CUDA C++，CUDA FORTRAN）
-  * CUDA C/C++，拥有自己的编译器NVCC，对于CUDA C++它支持C++的子集
+  * CUDA C/C++，拥有自己的语法，对于CUDA C/C++它支持C++的子集
   * 参考：[stackoverflow:Cuda C and C++](https://stackoverflow.com/questions/9846523/explanation-of-cuda-c-and-c)
 * vector的内存占用，如果一开始10000个元素缩小到100，内存会变化吗？一个100元素vector和10000个元素的占用。如何调整vector的空间。
 * 静态链接 动态链接

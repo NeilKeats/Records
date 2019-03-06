@@ -112,6 +112,7 @@
 * Windows下DLL需要多加哪些语句。
 
 * 让你写一个线程池需要写什么功能。【？】
+
 * vector是线程安全的吗？用什么可以保证vector的线程安全。【？】
 * 有哪些实现同步的方式，如何确保线程释放锁。【？】
 
@@ -148,10 +149,10 @@
   * **联系**：标准库大量参考了并基于标准模板程序库（STL）所创建的习惯用法，包含容器、算法、迭代器、函数对象等。
   * 参考：[WIKI：C++标准库](https://zh.wikipedia.org/wiki/C%2B%2B標準函式庫)，[WIKI：STL](https://zh.wikipedia.org/wiki/标准模板库)，[C++标准库/STD/STL等的区别](https://blog.csdn.net/KingCat666/article/details/44995653)
 * 项目为什么使用GPU？
-  * 
 * CUDA与C区别
   * CUDA是一种平台，同样也包括编程语言（CUDA C，CUDA C++，CUDA FORTRAN）
-  * CUDA C/C++，拥有自己的编译器NVCC，对于CUDA C++它支持C++的子集，
+  * CUDA C/C++，拥有自己的编译器NVCC，对于CUDA C++它支持C++的子集
+  * 参考：[stackoverflow:Cuda C and C++](https://stackoverflow.com/questions/9846523/explanation-of-cuda-c-and-c)
 * vector的内存占用，如果一开始10000个元素缩小到100，内存会变化吗？一个100元素vector和10000个元素的占用。如何调整vector的空间。
 * 静态链接 动态链接
   * 答：不清楚

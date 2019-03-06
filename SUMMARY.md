@@ -1,9 +1,5 @@
 # Summary
 
-## Introduction
-
-* [Introduction](README.md)
-
 ## C++
 
 * [表达式 expression](C++/biao-da-shi.md)

@@ -191,7 +191,7 @@
 
   * 用法，\#pragma。
 
-  * 参考：[OMP入门](https://www.cnblogs.com/kuliuheng/p/4059133.html)，
+  * 参考：[OMP入门](https://www.cnblogs.com/kuliuheng/p/4059133.html)，[Wiki:OMP](https://zh.wikipedia.org/wiki/OpenMP)
 
 * 两个线程都调用cout，线程1输出A，线程2输出B，输出结果？手写多线程，两个线程轮流cout，保证结果轮流。
 

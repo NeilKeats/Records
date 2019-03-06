@@ -9,7 +9,7 @@
 
 ## JAVA
 
-* [算法经验](java/suan-fa-jing-yan.md)
+* [算法经验](Java/suan-fa-jing-yan.md)
 
 ## Data structure & Algorithm
 
@@ -27,4 +27,6 @@
 ## Others
 
 * [Mark](others/mark.md)
+
+
 

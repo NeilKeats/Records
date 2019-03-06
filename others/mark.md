@@ -167,7 +167,6 @@
 
   * 可重用，减少代码重复，且修改方便。本身是一个函数，会检查参数问题，更安全（可与\#define宏相比）
 
-  * 
   * 内联函数应该在头文件中定义，这一点不同于其他函数。编译器在调用点内联展开函数的代码时，必须能够找到 inline 函数的定义才能将调用函数替换为函数代码，而对于在头文件中仅有函数声明是不够的。
 
   * 参考：[stackoverflow:Benefits of inline function in C++ ](https://stackoverflow.com/questions/145838/benefits-of-inline-functions-in-c)，[When use Inline](https://stackoverflow.com/questions/1759300/when-should-i-write-the-keyword-inline-for-a-function-method/1759575#1759575)
@@ -175,6 +174,7 @@
 * 会不会多线程，什么时候用多线程，单核心单线程的机器跑多线程会怎么样？
 
 * 介绍openmp。
+
 * 两个线程都调用cout，线程1输出A，线程2输出B，输出结果？手写多线程，两个线程轮流cout，保证结果轮流。
 
 

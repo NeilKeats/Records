@@ -108,6 +108,7 @@
 * STL用过哪些，vector最多可以申请多大内存。
 
 * C ++的异常有哪几种？
+
 * Windows下DLL需要多加哪些语句。
 * 让你写一个线程池需要写什么功能。【？】
 * vector是线程安全的吗？用什么可以保证vector的线程安全。【？】
@@ -140,12 +141,13 @@
 * 智能指针
 * 标准库和STL区别
   * 答：不知道
-  * C++标准库，C++ Standard Library，是类库和函数的集合，由c++标准委员会制定，并不断维护更新。标准程序库提供若干泛型容器、函数对象、泛型字符串和流（包含交互和文件I/O），支持部分语言特性和常用的函数，如开平方根。C++标准程序库也吸收了ISO C90 C标准程序库。标准程序库的特性宣告于std名字空间之中。
+  * C++标准库，C++ Standard Library，是类库和函数的集合，由c++标准委员会制定，并不断维护更新。标准程序库提供若干泛型容器、函数对象、泛型字符串和流（包含交互和文件I/O），支持部分语言特性和常用的函数，如开平方根。C++标准程序库也吸收了ISO C90 C标准程序库。标准程序库的特性宣告于std名字空间之中。
   * std命名空间是C++中标准库类型对象的命名空间
   * STL（标准模板库，英文：Standard Template Library，缩写：STL），是一个C++软件库，大量影响了C++标准程序库但**并非是其的一部分**。其中包含4个组件，分别为算法、容器、函数、迭代器。实现了基于模版的数据结构和算法。
   * **联系**：标准库大量参考了并基于标准模板程序库（STL）所创建的习惯用法，包含容器、算法、迭代器、函数对象等。
-  * 参考：[WIKI：C++标准库](https://zh.wikipedia.org/wiki/C%2B%2B%E6%A8%99%E6%BA%96%E5%87%BD%E5%BC%8F%E5%BA%AB)，[WIKI：STL](https://zh.wikipedia.org/wiki/%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93)，[C++标准库/STD/STL等的区别](https://blog.csdn.net/KingCat666/article/details/44995653)
+  * 参考：[WIKI：C++标准库](https://zh.wikipedia.org/wiki/C%2B%2B標準函式庫)，[WIKI：STL](https://zh.wikipedia.org/wiki/标准模板库)，[C++标准库/STD/STL等的区别](https://blog.csdn.net/KingCat666/article/details/44995653)
 * cuda与c区别
+  * 
 * vector的内存占用，如果一开始10000个元素缩小到100，内存会变化吗？一个100元素vector和10000个元素的占用。如何调整vector的空间。
 * 静态链接 动态链接。不会
 * 程序与进程区别，编译过程

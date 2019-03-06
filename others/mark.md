@@ -162,9 +162,11 @@
   * 同上待补充
 * 网络，Tcp，拥塞控制算法流程
 * inline 介绍，优势。效率高，为什么开销低。减少函数栈的开销，还有呢？不知道。
+
   * 内联函数更快，因为您不需要在堆栈上推送和弹出内容，如参数和返回地址
 
-  * 参考：[stackoverflow:Benefits of inline function in C++ ](https://stackoverflow.com/questions/145838/benefits-of-inline-functions-in-c)，
+  * 参考：[stackoverflow:Benefits of inline function in C++ ](https://stackoverflow.com/questions/145838/benefits-of-inline-functions-in-c)，[When use Inline](https://stackoverflow.com/questions/1759300/when-should-i-write-the-keyword-inline-for-a-function-method/1759575#1759575)
+
 * 会不会多线程，什么时候用多线程，单核心单线程的机器跑多线程会怎么样？
 * 介绍openmp。
 * 两个线程都调用cout，线程1输出A，线程2输出B，输出结果？手写多线程，两个线程轮流cout，保证结果轮流。

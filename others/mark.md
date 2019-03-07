@@ -3,7 +3,7 @@
 ## 选择题知识点
 
 * static、const函数
-  * >
+  * > const 是表示常量的关键字，用const 声明变量则表明这个变量是常量不可修改，因此必须初始化
 * 面向对象**依赖倒置**
 * STL的atmoic语句，线程安全
 * HTTP的REQUEST

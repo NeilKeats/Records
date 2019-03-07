@@ -137,61 +137,61 @@
 ## 凉经
 
 * 了解什么c++11特性
-  * 答：auto、大括号初始化。【应该提及：智能指针、nullptr、range for】
+  * > 答：auto、大括号初始化。【应该提及：智能指针、nullptr、range for】
 * auto的实现
-  * 编译时，推断表达式的类型，以作为变量类型。必须被初始化否则无法推断
+  * > 编译时，推断表达式的类型，以作为变量类型。必须被初始化否则无法推断
 * 大括号list，为什么要设计这个特性
 * 智能指针
 * 标准库和STL区别
-  * 答：不知道
-  * C++标准库，C++ Standard Library，是类库和函数的集合，由c++标准委员会制定，并不断维护更新。标准程序库提供若干泛型容器、函数对象、泛型字符串和流（包含交互和文件I/O），支持部分语言特性和常用的函数，如开平方根。C++标准程序库也吸收了ISO C90 C标准程序库。标准程序库的特性宣告于std名字空间之中。
-  * std命名空间是C++中标准库类型对象的命名空间
-  * STL（标准模板库，英文：Standard Template Library，缩写：STL），是一个C++软件库，大量影响了C++标准程序库但**并非是其的一部分**。其中包含4个组件，分别为算法、容器、函数、迭代器。实现了基于模版的数据结构和算法。
-  * **联系**：标准库大量参考了并基于标准模板程序库（STL）所创建的习惯用法，包含容器、算法、迭代器、函数对象等。
-  * 参考：[WIKI：C++标准库](https://zh.wikipedia.org/wiki/C%2B%2B標準函式庫)，[WIKI：STL](https://zh.wikipedia.org/wiki/标准模板库)，[C++标准库/STD/STL等的区别](https://blog.csdn.net/KingCat666/article/details/44995653)
+  * > 答：不知道
+    > C++标准库，C++ Standard Library，是类库和函数的集合，由c++标准委员会制定，并不断维护更新。标准程序库提供若干泛型容器、函数对象、泛型字符串和流（包含交互和文件I/O），支持部分语言特性和常用的函数，如开平方根。C++标准程序库也吸收了ISO C90 C标准程序库。标准程序库的特性宣告于std名字空间之中。
+    > std命名空间是C++中标准库类型对象的命名空间
+    > STL（标准模板库，英文：Standard Template Library，缩写：STL），是一个C++软件库，大量影响了C++标准程序库但**并非是其的一部分**。其中包含4个组件，分别为算法、容器、函数、迭代器。实现了基于模版的数据结构和算法。
+    > **联系**：标准库大量参考了并基于标准模板程序库（STL）所创建的习惯用法，包含容器、算法、迭代器、函数对象等。
+    > 参考：[WIKI：C++标准库](https://zh.wikipedia.org/wiki/C%2B%2B標準函式庫)，[WIKI：STL](https://zh.wikipedia.org/wiki/标准模板库)，[C++标准库/STD/STL等的区别](https://blog.csdn.net/KingCat666/article/details/44995653)
 * 项目为什么使用GPU？
 * CUDA与C区别
-  * CUDA是一种平台，同样也包括编程语言（CUDA C，CUDA C++，CUDA FORTRAN）
-  * CUDA C/C++，拥有自己的语法，对于CUDA C/C++它支持C++的子集
-  * 参考：[stackoverflow:Cuda C and C++](https://stackoverflow.com/questions/9846523/explanation-of-cuda-c-and-c)
+  * > CUDA是一种平台，同样也包括编程语言（CUDA C，CUDA C++，CUDA FORTRAN）
+    > CUDA C/C++，拥有自己的语法，对于CUDA C/C++它支持C++的子集
+    > 参考：[stackoverflow:Cuda C and C++](https://stackoverflow.com/questions/9846523/explanation-of-cuda-c-and-c)
 * vector的内存占用，如果一开始10000个元素缩小到100，内存会变化吗？一个100元素vector和10000个元素的占用。如何调整vector的空间。
 * 静态链接 动态链接
-  * 答：不清楚
-  * [参考](https://www.cnblogs.com/tracylee/archive/2012/10/15/2723816.html)，待补充
+  * > 答：不清楚
+    > [参考](https://www.cnblogs.com/tracylee/archive/2012/10/15/2723816.html)，待补充
 * 程序与进程区别，编译过程
-  * 同上待补充
+  * > 同上待补充
 * 网络，Tcp，拥塞控制算法流程
 * inline 介绍，优势。效率高，为什么开销低。减少函数栈的开销，还有呢？不知道。
 
-  * 内联函数更快，因为您不需要在堆栈上推送和弹出内容，如参数和返回地址。避免参数拷贝
-
-  * 可重用，减少代码重复，且修改方便。本身是一个函数，会检查参数问题，更安全（可与\#define宏相比）
-
-  * 内联函数应该在头文件中定义，这一点不同于其他函数。编译器在调用点内联展开函数的代码时，必须能够找到 inline 函数的定义才能将调用函数替换为函数代码，而对于在头文件中仅有函数声明是不够的。
-
-  * 参考：[stackoverflow:Benefits of inline function in C++ ](https://stackoverflow.com/questions/145838/benefits-of-inline-functions-in-c)，[When use Inline](https://stackoverflow.com/questions/1759300/when-should-i-write-the-keyword-inline-for-a-function-method/1759575#1759575)
+  * > 内联函数更快，因为您不需要在堆栈上推送和弹出内容，如参数和返回地址。避免参数拷贝
+    >
+    > 可重用，减少代码重复，且修改方便。本身是一个函数，会检查参数问题，更安全（可与\#define宏相比）
+    >
+    > 内联函数应该在头文件中定义，这一点不同于其他函数。编译器在调用点内联展开函数的代码时，必须能够找到 inline 函数的定义才能将调用函数替换为函数代码，而对于在头文件中仅有函数声明是不够的。
+    >
+    > 参考：[stackoverflow:Benefits of inline function in C++ ](https://stackoverflow.com/questions/145838/benefits-of-inline-functions-in-c)，[When use Inline](https://stackoverflow.com/questions/1759300/when-should-i-write-the-keyword-inline-for-a-function-method/1759575#1759575)
 
 * 会不会多线程，什么时候用多线程，单核心单线程的机器跑多线程会怎么样？
 
-  * 应该展开讲，思维局限在了高性能应用中
-
-  * 考虑非计算密集型任务【阻塞等情况，交互型】，以及计算密集型任务。考虑OS
-
-  * “有些人把多线程的程序设计和多处理器或多核系统联系起来. 但是即使程序运行在单处理器上, 也能得到多线程编程的好处. 处理器的数量和并不影响程序结构, 所以不管处理器的个数多少, 程序都可以通过使用多线程得到简化. 而且, 即使多线程程序在串行化任务上不得不阻塞, 由于某些线程在阻塞的时候还有另一些线程可以运行, 所以多线程程序在单处理器上运行还是可以改善响应时间和吞吐量。
-
-  * [知乎：单核心CPU的多线程](https://www.zhihu.com/question/37396742)
+  * > 应该展开讲，思维局限在了高性能应用中
+    >
+    > 考虑非计算密集型任务【阻塞等情况，交互型】，以及计算密集型任务。考虑OS
+    >
+    > “有些人把多线程的程序设计和多处理器或多核系统联系起来. 但是即使程序运行在单处理器上, 也能得到多线程编程的好处. 处理器的数量和并不影响程序结构, 所以不管处理器的个数多少, 程序都可以通过使用多线程得到简化. 而且, 即使多线程程序在串行化任务上不得不阻塞, 由于某些线程在阻塞的时候还有另一些线程可以运行, 所以多线程程序在单处理器上运行还是可以改善响应时间和吞吐量。
+    >
+    > [知乎：单核心CPU的多线程](https://www.zhihu.com/question/37396742)
 
 * 介绍openmp。
 
-  * 【是什么】【有什么用】【好处】
-
-  * OpenMP是一个可移植跨平台的多线程实现，主线程\(顺序的执行指令\)生成一系列的子线程，并将任务划分给这些子线程进行执行。这些子线程并行的运行，由运行时环境将线程分配给不同的处理器
-
-  * 抽象程度高、易于编程，帮程序员接管负载均衡的问题。可以实现任务并行和数据并行。
-
-  * 用法，\#pragma。
-
-  * 参考：[OMP入门](https://www.cnblogs.com/kuliuheng/p/4059133.html)，[Wiki:OMP](https://zh.wikipedia.org/wiki/OpenMP)
+  * > 【是什么】【有什么用】【好处】
+    >
+    > OpenMP是一个可移植跨平台的多线程实现，主线程\(顺序的执行指令\)生成一系列的子线程，并将任务划分给这些子线程进行执行。这些子线程并行的运行，由运行时环境将线程分配给不同的处理器
+    >
+    > 抽象程度高、易于编程，帮程序员接管负载均衡的问题。可以实现任务并行和数据并行。
+    >
+    > 用法，\#pragma。
+    >
+    > 参考：[OMP入门](https://www.cnblogs.com/kuliuheng/p/4059133.html)，[Wiki:OMP](https://zh.wikipedia.org/wiki/OpenMP)
 
 * 两个线程都调用cout，线程1输出A，线程2输出B，输出结果？手写多线程，两个线程轮流cout，保证结果轮流。
 

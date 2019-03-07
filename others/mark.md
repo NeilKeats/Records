@@ -223,12 +223,11 @@
 * 写一个空类
 
 * new malloc区别
+
 * 智能指针，unique\_ptr能赋值给别人吗
 * 循环引用\(weak\_ptr解决shared\_ptr的循环引用问题\)
 * Class struct区别
 * C程序内存模型
-
-* 编译结果会怎样
 
 * 线程进程区别
 

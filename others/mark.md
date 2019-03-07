@@ -172,7 +172,7 @@
   * > CUDA是一种平台，同样也包括编程语言（CUDA C，CUDA C++，CUDA FORTRAN）  
     > CUDA C/C++，拥有自己的语法，对于CUDA C/C++它支持C++的子集  
     > 参考：[stackoverflow:Cuda C and C++](https://stackoverflow.com/questions/9846523/explanation-of-cuda-c-and-c)
-* vector的内存占用，如果一开始10000个元素缩小到100，内存会变化吗？一个100元素vector和10000个元素的占用。如何调整vector的空间。
+* vector的内存管理。内存占用，如果一开始10000个元素缩小到100，内存会变化吗？一个100元素vector和10000个元素的占用。如何调整vector的空间。
 * 静态链接 动态链接
   * > 答：不清楚  
     > [参考](https://www.cnblogs.com/tracylee/archive/2012/10/15/2723816.html)，待补充
@@ -221,7 +221,7 @@
 
 * C++
 * 写一个空类
-* vector内存管理
+
 * new malloc区别
 * 智能指针，unique\_ptr能赋值给别人吗
 * 循环引用\(weak\_ptr解决shared\_ptr的循环引用问题\)
@@ -231,6 +231,7 @@
 * 编译结果会怎样
 
 * 线程进程区别
+
 * 手撸atoi
 
 

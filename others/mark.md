@@ -20,6 +20,7 @@
     > 作为函数参数，顶层const会被忽略
 
 * 面向对象**依赖倒置**
+
 * STL的atmoic语句，线程安全
 * HTTP的REQUEST
 
@@ -210,6 +211,28 @@
     > 参考：[OMP入门](https://www.cnblogs.com/kuliuheng/p/4059133.html)，[Wiki:OMP](https://zh.wikipedia.org/wiki/OpenMP)
 
 * 两个线程都调用cout，线程1输出A，线程2输出B，输出结果？手写多线程，两个线程轮流cout，保证结果轮流。
+
+---
+
+怼项目
+
+* C++
+* 写一个空类
+* vector内存管理
+* new malloc区别
+* 智能指针，unique\_ptr能赋值给别人吗
+* 循环引用\(weak\_ptr解决shared\_ptr的循环引用问题\)
+* Class struct区别
+* C程序内存模型
+* tcp udp区别
+* 拥塞控制
+* 滑动窗口
+* 编译过程
+* 静态链接动态链接
+* 动态库b依赖静态库a，程序c依赖动态库b
+* 编译结果会怎样
+* 线程进程区别
+* 手撸atoi
 
 
 

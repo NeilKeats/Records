@@ -33,6 +33,7 @@
 ## Operating System
 
 * [进程环境](operating-system/processenvironment.md)
+* [进程控制](operating-system/processcontrol.md)
 
 ## Others
 

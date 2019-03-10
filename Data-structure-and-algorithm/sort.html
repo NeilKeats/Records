@@ -162,12 +162,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../chang-jian-ji-zhong-yao-wen-ti.html">
+        <li class="chapter " data-level="1.4" data-path="../C++/chang-jian-ji-zhong-yao-wen-ti.html">
             
-                <a href="../chang-jian-ji-zhong-yao-wen-ti.html">
+                <a href="../C++/chang-jian-ji-zhong-yao-wen-ti.html">
             
                     
-                    常见及重要问题
+                    常见重要问题
             
                 </a>
             
@@ -181,6 +181,19 @@
         <li class="header">JAVA</li>
         
         
+    
+        <li class="chapter " data-level="2.1" data-path="../Java/suan-fa-jing-yan.html">
+            
+                <a href="../Java/suan-fa-jing-yan.html">
+            
+                    
+                    算法经验
+            
+                </a>
+            
+
+            
+        </li>
     
 
     
@@ -268,6 +281,72 @@
         
         
     
+        <li class="chapter " data-level="5.1" data-path="../android/android-studiocha-jian.html">
+            
+                <a href="../android/android-studiocha-jian.html">
+            
+                    
+                    Android studio插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Android 9.0源码分析笔记</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../android/9.0源码分析笔记/Window.html">
+            
+                <a href="../android/9.0源码分析笔记/Window.html">
+            
+                    
+                    Window
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Operating System</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../operating-system/processenvironment.html">
+            
+                <a href="../operating-system/processenvironment.html">
+            
+                    
+                    进程环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../operating-system/processcontrol.html">
+            
+                <a href="../operating-system/processcontrol.html">
+            
+                    
+                    进程控制
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -275,7 +354,7 @@
         
         
     
-        <li class="chapter " data-level="6.1" data-path="../others/mark.html">
+        <li class="chapter " data-level="8.1" data-path="../others/mark.html">
             
                 <a href="../others/mark.html">
             
@@ -452,6 +531,45 @@
     <span class="token keyword">return</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x9645;&#x4E0A;&#x53EF;&#x4EE5;&#x4F18;&#x5316;&#xFF0C;&#x4E3B;&#x8981;&#x95EE;&#x9898;&#x5728;&#x4E8E;&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x90FD;&#x91CD;&#x65B0;&#x7533;&#x8BF7;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5E76;&#x4E14;&#x8FDB;&#x884C;&#x4E86;&#x590D;&#x5236;&#x3002;&#x53CD;&#x590D;&#x7684;&#x7533;&#x8BF7;&#x7A7A;&#x95F4;&#x53EF;&#x80FD;&#x9020;&#x6210;&#x989D;&#x5916;&#x7684;&#x5F00;&#x9500;&#xFF0C;&#x53EF;&#x4EE5;&#x4E00;&#x6B21;&#x7533;&#x8BF7;&#x4E00;&#x4E2A;&#x540C;&#x539F;&#x6570;&#x7EC4;&#x4E00;&#x6837;&#x7684;&#x7684;&#x4E34;&#x65F6;&#x6570;&#x7EC4;&#xFF0C;&#x7136;&#x540E;&#x590D;&#x7528;&#x4E24;&#x4E2A;&#x6570;&#x7EC4;&#x7684;&#x7A7A;&#x95F4;&#x3002;</p>
+<pre class="language-"><code class="lang-c++">//One temp array version
+void merge_sort_recursive_t(vector<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int</span><span class="token punctuation">&gt;</span></span>::iterator beg, vector<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int</span><span class="token punctuation">&gt;</span></span>::iterator end, vector<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int</span><span class="token punctuation">&gt;</span></span>::iterator t_beg, vector<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int</span><span class="token punctuation">&gt;</span></span>::iterator t_end){
+    if(beg+1&gt;=end)
+        return;
+
+    auto middle = beg + (end-beg)/2;    
+    auto t_middle = t_beg + (end-beg)/2;
+    merge_sort_recursive_t(t_beg, t_middle, beg, middle);
+    merge_sort_recursive_t(t_middle, t_end, middle, end);
+
+    //merge
+    auto t1 = beg;
+    auto t2 = middle;
+    while(t1 != middle &amp;&amp; t2 != end){
+        if(*t1 &lt;= *t2)
+            *t_beg = *(t1++);
+        else
+            *t_beg = *(t2++);
+        ++t_beg;
+    }
+
+    if(t1 == middle){
+        t1 = t2;
+        middle = end;
+    }
+    while(t1 != middle)
+        *(t_beg++) = *(t1++);
+
+    return;
+}
+
+void merge_sort(vector<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int</span><span class="token punctuation">&gt;</span></span> &amp;v){
+    //merge_sort_recursive(v.begin(), v.end());
+    vector<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int</span><span class="token punctuation">&gt;</span></span> tmp(v.begin(), v.end());
+    merge_sort_recursive_t(tmp.begin(), tmp.end(), v.begin(), v.end());
+    return;
+}
+</code></pre>
 <h1 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><a name="&#x5FEB;&#x901F;&#x6392;&#x5E8F;" class="anchor-navigation-ex-anchor" href="#&#x5FEB;&#x901F;&#x6392;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x5FEB;&#x901F;&#x6392;&#x5E8F;</h1>
 <pre class="language-"><code class="lang-cpp"><span class="token comment">/*
  * quick sort
@@ -568,7 +686,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"排序算法","level":"3.2","depth":1,"next":{"title":"算法习题","level":"3.3","depth":1,"path":"Data-structure-and-algorithm/suan-fa-xi-ti.md","ref":"Data-structure-and-algorithm/suan-fa-xi-ti.md","articles":[]},"previous":{"title":"树","level":"3.1","depth":1,"path":"Data-structure-and-algorithm/er-cha-shu.md","ref":"Data-structure-and-algorithm/er-cha-shu.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["disqus","theme-comscore","-lunr","-search","search-plus","advanced-emoji","splitter","expandable-chapters-small","-highlight","prism","prism-themes","book-summary-scroll-position-saver","sharing","expandable-chapters","anchor-navigation-ex","katex"],"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-a11y-dark.css"]},"disqus":{"useIdentifier":false,"shortName":"neilkeats"},"book-summary-scroll-position-saver":{},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"theme-comscore":{},"prism-themes":{},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Data-structure-and-algorithm/sort.md","mtime":"2019-03-02T13:19:10.485Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T09:36:07.508Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"排序算法","level":"3.2","depth":1,"next":{"title":"算法习题","level":"3.3","depth":1,"path":"Data-structure-and-algorithm/suan-fa-xi-ti.md","ref":"Data-structure-and-algorithm/suan-fa-xi-ti.md","articles":[]},"previous":{"title":"树","level":"3.1","depth":1,"path":"Data-structure-and-algorithm/er-cha-shu.md","ref":"Data-structure-and-algorithm/er-cha-shu.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["disqus","theme-comscore","-lunr","-search","search-plus","advanced-emoji","splitter","expandable-chapters-small","-highlight","prism","prism-themes","book-summary-scroll-position-saver","sharing","expandable-chapters","anchor-navigation-ex","katex"],"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-a11y-dark.css"]},"disqus":{"useIdentifier":false,"shortName":"neilkeats"},"book-summary-scroll-position-saver":{},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"theme-comscore":{},"prism-themes":{},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Data-structure-and-algorithm/sort.md","mtime":"2019-03-10T05:34:20.052Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-10T05:35:13.039Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

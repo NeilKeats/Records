@@ -135,6 +135,52 @@ void merge_sort(vector<int> &v){
 }
 ```
 
+
+
+上面的代码实际上可以优化，主要问题在于每次迭代都重新申请一个数组，并且进行了复制。反复的申请空间可能造成额外的开销，可以一次申请一个同原数组一样的的临时数组，然后复用两个数组的空间。
+
+```c++
+//One temp array version
+void merge_sort_recursive_t(vector<int>::iterator beg, vector<int>::iterator end, vector<int>::iterator t_beg, vector<int>::iterator t_end){
+	if(beg+1>=end)
+		return;
+	
+	auto middle = beg + (end-beg)/2;	
+	auto t_middle = t_beg + (end-beg)/2;
+	merge_sort_recursive_t(t_beg, t_middle, beg, middle);
+	merge_sort_recursive_t(t_middle, t_end, middle, end);
+	
+	//merge
+	auto t1 = beg;
+	auto t2 = middle;
+	while(t1 != middle && t2 != end){
+		if(*t1 <= *t2)
+			*t_beg = *(t1++);
+		else
+			*t_beg = *(t2++);
+		++t_beg;
+	}
+	
+	if(t1 == middle){
+		t1 = t2;
+		middle = end;
+	}
+	while(t1 != middle)
+		*(t_beg++) = *(t1++);
+	
+	return;
+}
+
+void merge_sort(vector<int> &v){
+	//merge_sort_recursive(v.begin(), v.end());
+	vector<int> tmp(v.begin(), v.end());
+	merge_sort_recursive_t(tmp.begin(), tmp.end(), v.begin(), v.end());
+	return;
+}
+```
+
+
+
 # 快速排序
 
 ```cpp

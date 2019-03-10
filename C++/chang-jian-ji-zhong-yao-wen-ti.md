@@ -174,6 +174,8 @@ class A{
 
 [多态与虚函数](http://huqunxing.site/2016/09/08/C++%20%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7%E4%B9%8B%E5%A4%9A%E6%80%81/)
 
+
+
 ## 虚基类，虚继承
 
 [虚基类](https://zh.wikipedia.org/wiki/虚继承)
@@ -216,4 +218,6 @@ std命名空间是C++中标准库类型对象的命名空间
 ---
 
 [百度C++提前批](https://www.nowcoder.com/discuss/96139?type=0&order=0&pos=16&page=1)
+
+[C++后台开发校招面试常见问题](https://blog.csdn.net/shanghairuoxiao/article/details/72876248)
 

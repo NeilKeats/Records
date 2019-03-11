@@ -158,6 +158,7 @@
   * 设计目的【ST】
   * 硬件结构区别【A】
   * 特点【R】
+
 * 为什么使用多线程CPU/GPU
 
   * 任务本身特点出发，计算密集型，可分成子任务，无依赖【Situation】
@@ -171,9 +172,18 @@
 
 * auto的实现
 
-  * > 编译时，推断表达式的类型，以作为变量类型。必须被初始化否则无法推断
+  * > 编译时，推断表达式的类型，以作为变量类型。
+    >
+    > 必须被初始化否则无法推断。
+    >
+    > 对于复杂的类型，或者无法表示的类型？【lamda】，简洁
+    >
+    > 参考：[如何评价 C++ 11 auto 关键字？](https://www.zhihu.com/question/35517805/answer/63304992)
 
-* 大括号list，为什么要设计这个特性
+* 花括号list（列表初始化），为什么要设计这个特性【赋值也可用】
+
+  * 提供初始元素值的列表时，只能用花括号初始化。方便对容器进行初始化。与圆括号的直接初始化区分开来。
+  * 用于内置类型变量时，如果使用列表初始化且初始值存在信息丢失，则编译器会报错
 
 * 智能指针
 
@@ -187,19 +197,25 @@
     > 参考：[WIKI：C++标准库](https://zh.wikipedia.org/wiki/C%2B%2B標準函式庫)，[WIKI：STL](https://zh.wikipedia.org/wiki/标准模板库)，[C++标准库/STD/STL等的区别](https://blog.csdn.net/KingCat666/article/details/44995653)
 
 * 项目为什么使用GPU？
+
 * CUDA与C区别
   * > CUDA是一种平台，同样也包括编程语言（CUDA C，CUDA C++，CUDA FORTRAN）  
     > CUDA C/C++，拥有自己的语法，对于CUDA C/C++它支持C++的子集  
     > 参考：[stackoverflow:Cuda C and C++](https://stackoverflow.com/questions/9846523/explanation-of-cuda-c-and-c)
+
 * vector的内存管理。内存占用，如果一开始10000个元素缩小到100，内存会变化吗？一个100元素vector和10000个元素的占用。如何调整vector的空间。
+
 * 静态链接 动态链接
   * > 答：不清楚  
     > [参考](https://www.cnblogs.com/tracylee/archive/2012/10/15/2723816.html)，待补充
     >
     > 动态库b依赖静态库a，程序c依赖动态库b，编译结果会怎样
+
 * 程序与进程区别，编译过程
   * > 同上待补充
+
 * 网络，TCP和UDP的区别，拥塞控制算法流程
+
 * inline 介绍，优势。效率高，为什么开销低。减少函数栈的开销，还有呢？不知道。
 
   * > 内联函数更快，因为您不需要在堆栈上推送和弹出内容，如参数和返回地址。避免参数拷贝

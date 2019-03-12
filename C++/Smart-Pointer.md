@@ -60,6 +60,10 @@ shared_ptr<int> p2(new int(1024));	//正确
 
 
 
+**循环引用问题：**https://blog.csdn.net/Jacketinsysu/article/details/53341370
+
+
+
 # `unique_ptr`类
 
 “独占”所指向对象，指针被销毁时对象也被销毁。
@@ -156,4 +160,5 @@ if(shared_ptr<int> np = wp.lock()){//若np不为空则成立
 }
 ```
 
-​	
+
+

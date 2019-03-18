@@ -284,3 +284,102 @@
 
 
 
+
+# 网易笔试3.16
+
+## 约瑟夫环
+
+我用了数组+循环来模拟，不详述。
+
+## 多线程调度问题，求最小总完成时长
+
+参考：https://www.cnblogs.com/cxmhy/p/4477670.html
+
+里面的第二个问题。我用的思路是一样的，奇怪的是只通过了80%？
+
+## 求解线性方程，最小二乘法或梯度下降
+
+写完了没时间调试，所以没通过。
+
+后面重新调了下，渣代码如下：
+
+```c++
+#include <iostream>
+#include <vector>
+#include<string>
+using namespace std;
+
+double cal_error(vector<vector<double>> &X, vector<double> &Y,
+	vector<double> &error, vector<double> &COE) {
+	double sum_err = 0.0;
+	for (int i = 0; i<X.size(); ++i) {
+		vector<double> &xi = X[i];
+		double yi = 0;
+		for (int j = 0; j<xi.size(); ++j)
+			yi += xi[j] * COE[j];
+		error[i] = yi - Y[i];
+		sum_err += error[i] * error[i] ;
+	}
+	return sum_err;
+}
+
+void update(vector<vector<double>> &X, vector<double> &Y,
+	vector<double> &error, vector<double> &COE, double step, double sum_error) {
+	auto grad = X;
+	auto rows = X.size(), cols = X[0].size();
+
+	for (int i = 0; i<rows; ++i) {
+		auto &xi = grad[i];
+		auto erri = error[i];
+		for (auto &xxj : xi)
+			xxj = xxj * -1.0 * erri * step;
+	}
+	for (int j = 0; j<cols; ++j) {
+		for (int i = 0; i<rows; ++i)
+			COE[j] += grad[i][j] * error[j] * error[j] / sum_error;
+	}
+}
+
+int main() {
+	vector<vector<double>> M;
+	string tmp;
+	while (cin >> tmp) {
+		vector<double> v;
+		auto last_beg = tmp.begin(), cur = tmp.begin();
+		while (cur != tmp.end()) {
+			if (*cur == ',') {
+				*cur = '\0';
+				double tmp = atof(string(last_beg, cur).c_str());
+				v.push_back(tmp);
+				last_beg = cur + 1;
+			}
+			++cur;
+		}
+		double ftmp = atof(string(last_beg, cur).c_str());
+		v.push_back(ftmp);
+		M.push_back(v);
+	}
+
+	vector<double> Y, error, COE(M[0].size(), 1.0);
+	vector<vector<double>> X;
+	for (auto &vi : M) {
+		vector<double> xi(vi.size(), 1.0);
+		for (int i = 0; i<vi.size() - 1; ++i)
+			xi[i + 1] = vi[i];
+		Y.push_back(vi[vi.size() - 1]);
+		X.push_back(xi);
+	}
+
+	int iter = 0;
+	error = Y;
+	auto sum_error = cal_error(X, Y, error, COE);
+	while (sum_error >= 0.0001) {
+		update(X, Y, error, COE, 0.15, sum_error);
+		sum_error = cal_error(X, Y, error, COE);
+		++iter;
+	}
+
+	return 0;
+}
+```
+

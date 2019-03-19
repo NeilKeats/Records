@@ -359,3 +359,24 @@ f(2, 3.14);
 >
 >   算数类型转换的匹配：所有算数类型转换级别一致，对于double转为float或long，优先级一致
 
+
+
+# 函数指针
+
+指向函数而非对象，类型由返回值和参数共同决定。
+
+```c++
+bool (*pf)(const string &, const string &);			//必须有圆括号(*pf)
+```
+
+使用方法，定义或赋值时可不加`&`；使用也可以不解引用`*`
+
+```c++
+pf = lengthCompare;
+pf = &lengthCompare; //两种都可以
+//
+bool b1 = pf("hello", "byebye");
+bool b2 = (*pf)("hello", "goodbye");
+```
+
+不同类型的函数指针不存在转换规则。

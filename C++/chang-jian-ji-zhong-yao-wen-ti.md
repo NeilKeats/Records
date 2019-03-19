@@ -1,5 +1,114 @@
 > C++常见重要问题
 
+# 概念
+
+## C++与C的区别
+
+C是面向过程的，而C++是面向对象的，且C++兼容绝大多数C的特性
+
+**C++**
+
+面向对象：封装，继承，多态 
+
+加入引用 const/inline/template代替宏常量 
+
+命名空间解决重名问题 
+
+STL提供高效的数据结构和算法
+
+## 指针与数组
+
+数组具有静态特征，而指针有更多的动态特性和灵活性。
+
+>   数组一经定义，其基址和大小便固定了，在该数组的有效使用范围内是不可变的；但是指针则具有很强的动态特征， 可以动态地指向任一该类型（定义决定）变量，这也就决定了它有更大的灵活性。
+
+指针是变量，可以被赋值，数组名不是变量，不可以被赋值。
+
+指针作为地址可以参加一些地址运算
+
+## 指针和引用
+
+**\*\*语法角度**
+
+指针是一个数据类型，是表示指向某个类型的地址变量，是一个新的变量。
+
+引用是一个变量的别名，本身并不是一个新的变量。
+
+指针变量可以不初始化，而引用要绑定到某个对象因此必须初始化
+
+引用无法改变来引用其他变量，而非const的指针可以使用赋值运算符指向不同地址。
+
+对于作为函数参数，使用指针类型的话，实际上是一个值传递的过程，将指针的数据也就是指向的地址，初始化给函数的形参。而参数是引用类型的话，就是一个引用传递，并没有创建一个新的临时变量，而是将实参绑定到形参。
+
+**\*\*汇编角度**
+
+https://www.marvinle.cn/2018/12/10/pointer-reference/
+
+
+
+## 右值与右值引用
+
+左值表示对象本身在内存中的表示，右值是表示对象的“值”
+
+-   左值表达式：求值结果是一个对象或者函数。
+-   对象用于右值时，用的是对象的值（内容），用做左值时，用的是对象的身份（在内存中位置）。
+-   左值可代替右值使用，反之不行
+
+
+**右值引用**
+
+必须绑定到右值的引用，即一个将要销毁的对象。不能绑定到左值。
+
+参考copy-control
+
+
+## C++里是怎么定义常量
+
+可以使用const定义一个常量，这样的话比define更好，是类型安全的
+
+## extern "C"
+
+extern是C/C++语言中表明函数和全局变量作用和范围的关键字，它告诉关编译器，其声明的 函数和变量可以在本模块或其他模块中使用
+
+extern "C"是连接申明，被extern"C"修饰的变量和函数是按照C语言的方式编译和链接的。
+C++语言支持函数重载，c语言不支持函数重载。函数被C++编译后在库中的名字与C语言的 不同，会将名字根据形参进行拓展以区分重载的函数，而c中就不会这样，故extern "c"解决 名字匹配问题，实现C++与C的混合编程。
+
+https://www.cnblogs.com/skynet/archive/2010/07/10/1774964.html
+
+# 函数
+
+## 函数指针
+
+
+
+## 重载与覆盖(override)
+
+-   当调用函数时，在调用点可见的作用域内有多个形参列表不同、名字相同的函数时，会出现函数重载。由编译器负责选择具体的重载版本，根据实参的类型。重载在编译时确定， 是静态的。重载不属于面向对象编程
+
+    覆盖：派生类重新定义基类虚函数 ；虚函数在运行时动态确定。 
+
+
+
+## C++函数栈空间的最大值
+
+栈大小是有默认值的，如果申请的临时变量太大的话就会超过栈大小，造成栈溢出。由OS决定，可能是1M或者2M。
+
+栈：在函数调用时，第一个进栈的是主函数中后的下一条指令（函数调用语句的下一条可执行语句）的地址，然后是函数的各个参数，在大多数的C编译器中，参数是由右往左入栈的，然后是函数中的局部变量。注意静态变量是不入栈的。
+
+当本次函数调用结束后，局部变量先出栈，然后是参数，最后栈顶指针指向最开始存的地址，也就是主函数中的下一条指令，程序由该点继续运行。
+
+## C如何进行函数调用
+
+
+
+## C++如何处理返回值
+
+
+
+## 写个函数在main函数执行前先运行
+
+全局变量的初始化
+
 # 关键字
 
 ## const & static
@@ -60,7 +169,11 @@ class A{
 -   **类的静态成员变量**
 
     -   只有一份数据，存储在全局数据区，生命周期是整个程序运行期间。类以及类的所有对象共享。
-    -   一般在类外部初始化，也可以在类内初始化（建议在类外也定义），但是必须为字面值常量。
+    -   一般在**类外部初始化**，也可以在类内初始化（建议在类外也定义），但是必须为字面值**常量**。
+        -   ISO C++ forbids in-class initialization of **non-const** static member ‘A::ia’
+        -   ‘**constexpr**’ needed for in-class initialization of static data member ‘const double A::ia’ of non-integral type
+        -   If a static data member is of const integral or const enumeration type, its decalaration in the class can specify a constant-initializer which shall be an integral constant expression.
+        -   必须为静态常量整型数据成员
 
 -   **类的静态成员函数**
     -   不包含this指针
@@ -98,6 +211,10 @@ class A{
 
 ## sizeof
 
+## cast类型转换
+
+### 隐式类型转换
+
 
 
 ## inline
@@ -114,11 +231,61 @@ class A{
 
 参考：[stackoverflow:Benefits of inline function in C++ ](https://stackoverflow.com/questions/145838/benefits-of-inline-functions-in-c)，[When use Inline](https://stackoverflow.com/questions/1759300/when-should-i-write-the-keyword-inline-for-a-function-method/1759575#1759575)
 
+## volatile
+
+
+
+## register
+
+
+
+## extern
+
+
+
+## restrict
+
+
+
+## auto
+
+-   可以不指明变量的类型，让编译器自动推断表达式的类型。通常会忽略顶层const，保留底层const
+-   【拓展】decltype：选择并返回表达式的类型，且返回变量类型（包括顶层const，引用）
+
+编译时，推断表达式的类型，以作为变量类型。
+
+必须被初始化否则无法推断。
+
+对于复杂的类型，或者无法表示的类型？【lamda】，简洁
+
+参考：[如何评价 C++ 11 auto 关键字？](https://www.zhihu.com/question/35517805/answer/63304992)
+
 ---
 
 # 操作符
 
-## ++iter; 与 iter++;
+## ++iter; 与 iter++; 如何实现
+
+```c++
+class StrBlobPtr{
+public:
+	StrBlobPtr &operator++(); //前置
+	StrBlobPtr operator++(int); //后置
+}
+
+StrBlobPtr& StrBlobPtr::operator++(){
+	check(curr); //检查当前变量是否已到达尾后位置
+  	++curr;
+  	return *this;
+};
+
+StrBlobPtr StrBlobPtr::operator++(int){
+	auto tmp = *this;
+	++*this;
+	return tmp;
+};
+
+```
 
 
 
@@ -173,7 +340,7 @@ const string *pcs = new const string; //空字符串
 
 `delete`可以对空指针安全操作。需要注意的是，`delete`之后应当重置指针。
 
-## 异常情况
+**异常情况**
 
 `malloc`申请失败返回NULL
 
@@ -185,8 +352,7 @@ const string *pcs = new const string; //空字符串
 
 [细说new与malloc的10点区别  ](https://www.cnblogs.com/QG-whz/p/5140930.html)
 
-[In what cases do I use malloc vs new?      
-](https://stackoverflow.com/questions/184537/in-what-cases-do-i-use-malloc-vs-new)
+[In what cases do I use malloc vs new? ](https://stackoverflow.com/questions/184537/in-what-cases-do-i-use-malloc-vs-new)
 
 [operator new和operator new[]区别？](https://www.zhihu.com/question/25497587)
 
@@ -198,6 +364,12 @@ const string *pcs = new const string; //空字符串
 
 [多态与虚函数](http://huqunxing.site/2016/09/08/C++%20%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7%E4%B9%8B%E5%A4%9A%E6%80%81/)
 
+## 
+
+## 析构函数
+
+## **静态函数和虚函数**
+
 
 
 ## 虚基类，虚继承
@@ -205,6 +377,10 @@ const string *pcs = new const string; //空字符串
 [虚基类](https://zh.wikipedia.org/wiki/虚继承)
 
 [虚继承](https://zh.wikipedia.org/wiki/虚继承)
+
+## RTTI
+
+
 
 ## 虚函数/纯虚函数，虚函数表
 
@@ -235,9 +411,9 @@ std命名空间是C++中标准库类型对象的命名空间
 
 ## 智能指针
 
+见另一个文件
 
-
-
+## shared_ptr的实现
 
 ---
 

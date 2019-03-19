@@ -270,7 +270,7 @@
 
 * new malloc区别
 
-* 智能指针，unique\_ptr能赋值给别人吗
+* 智能指针，unique\_ptr能赋值给别人吗·
 
 * 循环引用\(weak\_ptr解决shared\_ptr的循环引用问题\)
 

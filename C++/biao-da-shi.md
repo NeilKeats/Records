@@ -183,7 +183,7 @@ cast-name<type>(expression);
 //cast-name为 static_cast、dynamic_cast、const_cast和 reinterpret_cast
 ```
 
-`Dynamic_cast`：支持运行时类型识别
+`Dynamic_cast`：支持运行时类型识别，如果基类含有一个或多个虚函数，可以使用来请求类型转换。安全检查在运行时执行。
 
 `Static_cast`：任何具有明确意义的类型转换，只要不包含底层`const`都可用。可用于较大算数类型转换为较小类型、`void*`转换为其他类型指针
 
